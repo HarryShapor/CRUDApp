@@ -1,0 +1,32 @@
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\CRUDApp.exe.config
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\CRUDApp.exe
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\CRUDApp.pdb
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.AssemblyReference.cache
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.Properties.Resources.resources
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.GenerateResource.cache
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.CoreCompileInputs.cache
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.exe
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.pdb
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.MainForm.resources
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.dll
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.xml
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.Up2Date
+C:\Users\tabac\Desktop\РГРТУ 6 семестр\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.FormInsert.resources
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\CRUDApp.exe.config
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\CRUDApp.exe
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\CRUDApp.pdb
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.dll
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.SqlServer.dll
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.xml
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\bin\Debug\EntityFramework.SqlServer.xml
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.AssemblyReference.cache
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.FormInsert.resources
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.MainForm.resources
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.Properties.Resources.resources
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.GenerateResource.cache
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.CoreCompileInputs.cache
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.Up2Date
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.exe
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.pdb
