@@ -14,8 +14,8 @@ namespace CRUDApp
 {
     public partial class MainForm : Form
     {
-        ColumnComboBox cb = new ColumnComboBox();
-        LanguageNationWorld contextLNW = new LanguageNationWorld(
+        private ColumnComboBox cb = new ColumnComboBox();
+        private LanguageNationWorld contextLNW = new LanguageNationWorld(
             "Data Source = DESKTOP-OT35EF4\\SQLEXPRESS;"
                    + "Initial Catalog=Языки_народов_мира3;"
                    + "User ID =DESKTOP-OT35EF4\\HarryShapor;"
@@ -26,10 +26,17 @@ namespace CRUDApp
             cb.GetColumnInComboBox("Страны","Название", comboBoxCountryDelete);
             cb.GetColumnInComboBox("Страны", "Название", comboBoxCountryUpdate);
             cb.GetColumnInComboBox("Языки", "Название", comboBoxLanguageDelete);
-
+            cb.GetColumnInComboBox("Языки", "Название", comboBoxLanguageUpdate);
+            cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageDelete);
+            cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageUpdate);
+            cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryDelete);
+            cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryUpdate);
+            
+            
             SelectCountry();
             SelectLanguage();
             SelectEtnos();
+            setYear();
         }
 
 
@@ -125,14 +132,34 @@ namespace CRUDApp
 
             foreach (var item in list)
             {
-                var listItem = new ListViewItem(item.Страна.ToString());
-                listItem.SubItems.Add(item.Язык.ToString());
+                string country = "";
+                string language = "";
+                foreach (var coun in contextLNW.Страны.Where(c => c.Код == item.Страна).ToList())
+                {
+                    country = coun.Название;
+                }
+                foreach (var lang in contextLNW.Языки.Where(l => l.Код == item.Язык).ToList())
+                {
+                    language = lang.Название;
+                }
+                var listItem = new ListViewItem(country);
+                listItem.SubItems.Add(language);
                 listItem.SubItems.Add(item.Год.ToString());
                 listItem.SubItems.Add(item.Численность.ToString());
                 listViewEtnos.Items.Add(listItem);
             }
         }
 
+        private void setYear()
+        {
+            foreach (var el in contextLNW.ЭтническийСостав.
+                         Select(e => e.Год).Distinct().ToList().OrderByDescending(elem => elem))
+            {
+                comboBoxEtnosYearUpdate.Items.Add(el);
+                comboBoxEtnosYearDelete.Items.Add(el);
+            }
+        }
+        
         private void btnInsertEtnos_Click(object sender, EventArgs e)
         {
             Form form = new FormInsert(btnInsertEtnos.Name);

@@ -13,7 +13,8 @@ namespace CRUDApp
     public partial class FormInsert : Form
     {
         private string nameButton;
-        LanguageNationWorld contextLNW = new LanguageNationWorld(
+        private ColumnComboBox cb = new ColumnComboBox();
+        private LanguageNationWorld contextLNW = new LanguageNationWorld(
             "Data Source = DESKTOP-OT35EF4\\SQLEXPRESS;"
                    + "Initial Catalog=Языки_народов_мира3;"
                    + "User ID =DESKTOP-OT35EF4\\HarryShapor;"
@@ -35,6 +36,7 @@ namespace CRUDApp
                 textBoxCapital.Visible = true;
                 textBoxCountPeople.Visible = true;
                 btnCountryInsert.Visible = true;
+                this.listBoxInserted.Location = new System.Drawing.Point(29, 376);
 
                 comboBoxContinent.Items.Add("Евразия");
                 comboBoxContinent.Items.Add("Африка");
@@ -54,6 +56,7 @@ namespace CRUDApp
                 textBoxNameLanguage.Visible = true;
                 textBoxLanguageGroup.Visible = true;
                 btnLanguageInsert.Visible = true;
+                this.listBoxInserted.Location = new System.Drawing.Point(29, 300);
             }
             else if (this.nameButton == "btnInsertEtnos")
             {
@@ -67,6 +70,15 @@ namespace CRUDApp
                 comboBoxEtnosCountry.Visible = true;
                 btnEtnosInsert.Visible = true;
                 labelStrenght.Visible = true;
+                this.listBoxInserted.Location = new System.Drawing.Point(29, 300);
+                
+                cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountry);
+                cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguage);
+                
+                foreach (var el in Enumerable.Range(1950, DateTime.UtcNow.Year - 1949).Reverse().ToList())
+                {
+                    comboBoxYear.Items.Add(el);
+                }
             }
         }
 
@@ -145,10 +157,10 @@ namespace CRUDApp
                     }
                     var etnos = new ЭтническийСостав
                     {
-                        Страна = Convert.ToInt32(comboBoxEtnosCountry.Text),
+                        Страна = contextLNW.Страны.Where(el => el.Название == comboBoxEtnosCountry.Text).SingleOrDefault(),
                         Язык = Convert.ToInt32(comboBoxEtnosLanguage.Text),
                         Год = Convert.ToInt32(comboBoxYear.Text),
-                        Численность = Convert.ToInt32(textBoxCountPeople.Text)
+                        Численность = Convert.ToInt32(textBoxCountPeople.Text)                  
                     };
                     if (contextLNW.ЭтническийСостав.Where(el => el.Страна == etnos.Страна 
                             && el.Язык == etnos.Язык).ToList().Count == 0)

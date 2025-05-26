@@ -47,7 +47,7 @@ namespace CRUDApp
             this.buttonLanguageDelete = new System.Windows.Forms.Button();
             this.buttonLanguageUpdate = new System.Windows.Forms.Button();
             this.comboBoxLanguageDelete = new System.Windows.Forms.ComboBox();
-            this.comboBoxLaguageUpdate = new System.Windows.Forms.ComboBox();
+            this.comboBoxLanguageUpdate = new System.Windows.Forms.ComboBox();
             this.labelLanguageDelete = new System.Windows.Forms.Label();
             this.labelLanguageUpdate = new System.Windows.Forms.Label();
             this.btnInsertLanguage = new System.Windows.Forms.Button();
@@ -193,7 +193,7 @@ namespace CRUDApp
             this.LanguageTab.Controls.Add(this.buttonLanguageDelete);
             this.LanguageTab.Controls.Add(this.buttonLanguageUpdate);
             this.LanguageTab.Controls.Add(this.comboBoxLanguageDelete);
-            this.LanguageTab.Controls.Add(this.comboBoxLaguageUpdate);
+            this.LanguageTab.Controls.Add(this.comboBoxLanguageUpdate);
             this.LanguageTab.Controls.Add(this.labelLanguageDelete);
             this.LanguageTab.Controls.Add(this.labelLanguageUpdate);
             this.LanguageTab.Controls.Add(this.btnInsertLanguage);
@@ -242,14 +242,14 @@ namespace CRUDApp
             this.comboBoxLanguageDelete.TabIndex = 5;
             this.comboBoxLanguageDelete.Text = "русский";
             // 
-            // comboBoxLaguageUpdate
+            // comboBoxLanguageUpdate
             // 
-            this.comboBoxLaguageUpdate.FormattingEnabled = true;
-            this.comboBoxLaguageUpdate.Location = new System.Drawing.Point(591, 141);
-            this.comboBoxLaguageUpdate.Name = "comboBoxLaguageUpdate";
-            this.comboBoxLaguageUpdate.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxLaguageUpdate.TabIndex = 4;
-            this.comboBoxLaguageUpdate.Text = "китайский";
+            this.comboBoxLanguageUpdate.FormattingEnabled = true;
+            this.comboBoxLanguageUpdate.Location = new System.Drawing.Point(591, 141);
+            this.comboBoxLanguageUpdate.Name = "comboBoxLanguageUpdate";
+            this.comboBoxLanguageUpdate.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxLanguageUpdate.TabIndex = 4;
+            this.comboBoxLanguageUpdate.Text = "китайский";
             // 
             // labelLanguageDelete
             // 
@@ -485,7 +485,7 @@ namespace CRUDApp
         private Button buttonLanguageDelete;
         private Button buttonLanguageUpdate;
         private ComboBox comboBoxLanguageDelete;
-        private ComboBox comboBoxLaguageUpdate;
+        private ComboBox comboBoxLanguageUpdate;
         private Label labelLanguageDelete;
         private Label labelLanguageUpdate;
         private ComboBox comboBoxEtnosCountryDelete;
