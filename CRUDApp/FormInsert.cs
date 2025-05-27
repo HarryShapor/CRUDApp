@@ -13,14 +13,16 @@ namespace CRUDApp
     public partial class FormInsert : Form
     {
         private string nameButton;
+        private MainForm form;
         private ColumnComboBox cb = new ColumnComboBox();
         private LanguageNationWorld contextLNW = new LanguageNationWorld(
             "Data Source = DESKTOP-OT35EF4\\SQLEXPRESS;"
                    + "Initial Catalog=Языки_народов_мира3;"
                    + "User ID =DESKTOP-OT35EF4\\HarryShapor;"
                    + "Integrated Security=true;");
-        public FormInsert(string nameBtn)
+        public FormInsert(string nameBtn, MainForm form)
         {
+            this.form = form;
             this.nameButton = nameBtn;
             InitializeComponent();
             listBoxInserted.Visible = true;
@@ -106,19 +108,20 @@ namespace CRUDApp
                             contextLNW.Страны.Add(country);
                             contextLNW.SaveChanges();
                             listBoxInserted.Items.Add("Новая страна успешно добавлена!");
+                            form.SelectAll();
                         }
                         else
                         {
                             MessageBox.Show("Такая страна уже есть!");
                         }
                         return;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Поля содержат запрещенные символы!");
-                        return;
-                    }
             }
+            else
+            {
+                MessageBox.Show("Поля содержат запрещенные символы!");
+                return;
+            }
+        }
 
         private void btnLanguageInsert_Click(object sender, EventArgs e)
         {
@@ -137,6 +140,7 @@ namespace CRUDApp
                     contextLNW.Языки.Add(language);
                     contextLNW.SaveChanges();
                     listBoxInserted.Items.Add("Новый язык успешно добавлен!");
+                    form.SelectAll();
                 }
                 else
                 {
@@ -176,6 +180,7 @@ namespace CRUDApp
                 contextLNW.ЭтническийСостав.Add(etnos);
                 contextLNW.SaveChanges();
                 listBoxInserted.Items.Add("Новая запись успешно добавлена!");
+                form.SelectAll();
             }
             else
             {

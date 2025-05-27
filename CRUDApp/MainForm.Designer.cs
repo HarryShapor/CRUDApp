@@ -123,7 +123,6 @@ namespace CRUDApp
             this.comboBoxCountryDelete.Name = "comboBoxCountryDelete";
             this.comboBoxCountryDelete.Size = new System.Drawing.Size(128, 21);
             this.comboBoxCountryDelete.TabIndex = 7;
-            this.comboBoxCountryDelete.Text = "Казахстан";
             // 
             // labelCountryDelete
             // 
@@ -143,7 +142,6 @@ namespace CRUDApp
             this.comboBoxCountryUpdate.Name = "comboBoxCountryUpdate";
             this.comboBoxCountryUpdate.Size = new System.Drawing.Size(130, 21);
             this.comboBoxCountryUpdate.TabIndex = 5;
-            this.comboBoxCountryUpdate.Text = "Россия";
             // 
             // labelCountryUpdate
             // 
@@ -224,6 +222,7 @@ namespace CRUDApp
             this.buttonLanguageDelete.TabIndex = 7;
             this.buttonLanguageDelete.Text = "Удалить";
             this.buttonLanguageDelete.UseVisualStyleBackColor = true;
+            this.buttonLanguageDelete.Click += new System.EventHandler(this.buttonLanguageDelete_Click);
             // 
             // buttonLanguageUpdate
             // 

@@ -6,20 +6,28 @@ namespace CRUDApp
 {
     public partial class FormUpdate : Form
     {
+        private MainForm form;
         private string nameButton;
+        private int country;
+        private int language;
+        private string etnosCountry;
+        private string etnosLanguage;
+        private int year;
         private ColumnComboBox cb = new ColumnComboBox();
         private LanguageNationWorld contextLNW = new LanguageNationWorld(
             "Data Source = DESKTOP-OT35EF4\\SQLEXPRESS;"
             + "Initial Catalog=Языки_народов_мира3;"
             + "User ID =DESKTOP-OT35EF4\\HarryShapor;"
             + "Integrated Security=true;");
-        public FormUpdate(string nameBtn, int code)
+        public FormUpdate(string nameBtn, int code, MainForm form)
         {
+            this.form = form;
             this.nameButton = nameBtn;
             InitializeComponent();
             buttonUpdate.Visible = true;
             if (this.nameButton == "btnUpdateCountry")
             {
+                this.country = code;
                 // this.ClientSize = new System.Drawing.Size(200, 400);
                 labelNameCountryUpdate.Visible = true;
                 labelNameCountry.Visible = true;
@@ -32,15 +40,15 @@ namespace CRUDApp
                 textBoxCountPeopleUpdate.Visible = true;
                 
                 // this.listBoxInserted.Location = new System.Drawing.Point(29, 376);
-                string country = contextLNW.Страны.Where(el => el.Код == code)
+                string country = contextLNW.Страны.Where(el => el.Код == this.country)
                     .Select(el => el.Название).FirstOrDefault();
                 labelNameCountryUpdate.Text = "Изменяемая страна " + country;
                 textBoxNameCountryUpdate.Text = country;
-                textBoxCapitalUpdate.Text = contextLNW.Страны.Where(el => el.Код == code)
+                textBoxCapitalUpdate.Text = contextLNW.Страны.Where(el => el.Код == this.country)
                     .Select(el => el.Столица).FirstOrDefault();
-                textBoxCountPeopleUpdate.Text = contextLNW.Страны.Where(el => el.Код == code)
+                textBoxCountPeopleUpdate.Text = contextLNW.Страны.Where(el => el.Код == this.country) 
                     .Select(el => el.Количество_жителей).FirstOrDefault().ToString();
-                comboBoxContinentUpdate.Text = contextLNW.Страны.Where(el => el.Код == code)
+                comboBoxContinentUpdate.Text = contextLNW.Страны.Where(el => el.Код == this.country)
                     .Select(el => el.Материк).FirstOrDefault();
                 
                 comboBoxContinentUpdate.Items.Add("Евразия");
@@ -54,6 +62,7 @@ namespace CRUDApp
             else if (this.nameButton == "buttonLanguageUpdate")
             {
                 // this.ClientSize = new System.Drawing.Size(200, 330);
+                this.language = code;
                 labelNameLanguage.Visible = true;
                 labelLanguageGroup.Visible = true;
                 labelLanguage.Visible = true;
@@ -62,22 +71,23 @@ namespace CRUDApp
                 textBoxLanguageGroupUpdate.Visible = true;
                 textBoxSignSystemTypeUpdate.Visible = true;
 
-                string language = contextLNW.Языки.Where(el => el.Код == code)
+                string language = contextLNW.Языки.Where(el => el.Код == this.language)
                     .Select(el => el.Название).FirstOrDefault();
                 labelLanguage.Text = "Изменяемый язык " + language;
                 textBoxNameLanguageUpdate.Text = language;
-                textBoxLanguageGroupUpdate.Text = contextLNW.Языки.Where(el => el.Код == code)
+                textBoxLanguageGroupUpdate.Text = contextLNW.Языки.Where(el => el.Код == this.language)
                     .Select(el => el.Языковая_группа).FirstOrDefault();
-                textBoxSignSystemTypeUpdate.Text = contextLNW.Языки.Where(el => el.Код == code)
+                textBoxSignSystemTypeUpdate.Text = contextLNW.Языки.Where(el => el.Код == this.language)
                     .Select(el => el.Вид_знаковой_системы).FirstOrDefault();
                 
                 // this.listBoxInserted.Location = new System.Drawing.Point(29, 300);
             }
         }
 
-        public FormUpdate(string nameBtn, string country, string language, string year)
+        public FormUpdate(string nameBtn, string country, string language, string year, MainForm form)
         {
             this.nameButton = nameBtn;
+            this.form = form;
             InitializeComponent();
             // this.ClientSize = new System.Drawing.Size(200, 330);
             labelEtnosCountry.Visible = true;
@@ -94,10 +104,11 @@ namespace CRUDApp
             comboBoxEtnosLanguageUpdate.Text = language;
             comboBoxYearUpdate.Text = year;
             int yearInt = int.Parse(year);
+            this.year = yearInt;
             textBoxStrenghtUpdate.Text = contextLNW.ЭтническийСостав.Where(el =>
-                el.Страна == contextLNW.Страны.Where(c => c.Название == comboBoxEtnosCountryUpdate.Text)
+                el.Страна == contextLNW.Страны.Where(c => c.Название == this.etnosCountry)
                     .Select(c => c.Код).FirstOrDefault()
-                && el.Язык == contextLNW.Языки.Where(c => c.Название == comboBoxEtnosLanguageUpdate.Text)
+                && el.Язык == contextLNW.Языки.Where(c => c.Название == this.etnosLanguage)
                     .Select(c => c.Код).FirstOrDefault()
                 && el.Год == yearInt).Select(el => el.Численность).FirstOrDefault().ToString();
             
@@ -108,6 +119,96 @@ namespace CRUDApp
             {
                 comboBoxYearUpdate.Items.Add(el);
             }
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            this.form = form;
+            if (this.nameButton == "btnUpdateCountry")
+            {
+                var countryUpdate = contextLNW.Страны.Where(el => el.Код == this.country).FirstOrDefault();
+                if (textBoxNameCountryUpdate.Text != "")
+                {
+                    countryUpdate.Название = textBoxNameCountryUpdate.Text;
+                }
+                if (textBoxCapitalUpdate.Text != ""){
+                    countryUpdate.Столица = textBoxCapitalUpdate.Text;
+                }
+                else
+                {
+                    countryUpdate.Столица = null;
+                }
+                if (comboBoxContinentUpdate.SelectedIndex != -1)
+                {
+                    countryUpdate.Материк = comboBoxContinentUpdate.Text;
+                }
+                if ((int.Parse(textBoxCountPeopleUpdate.Text) > 0))
+                {
+                    countryUpdate.Количество_жителей = int.Parse(textBoxCountPeopleUpdate.Text);
+                }
+                contextLNW.SaveChanges();
+                form.SelectAll();
+            }
+            else if (this.nameButton == "buttonLanguageUpdate")
+            {
+                var languageUpdate = contextLNW.Языки.Where(el => el.Код == this.language).FirstOrDefault();
+                if (textBoxNameLanguageUpdate.Text != "")
+                {
+                    languageUpdate.Название = textBoxNameLanguageUpdate.Text;
+                }
+                if (textBoxSignSystemTypeUpdate.Text != ""){
+                    languageUpdate.Вид_знаковой_системы = textBoxSignSystemTypeUpdate.Text;
+                }
+                else
+                {
+                    languageUpdate.Вид_знаковой_системы = null;
+                }
+                if (textBoxLanguageGroupUpdate.Text != "")
+                {
+                    languageUpdate.Языковая_группа = textBoxLanguageGroupUpdate.Text;
+                }
+                contextLNW.SaveChanges();
+                form.SelectAll();
+            }
+            else if (this.nameButton == "buttonEtnosUpdate")
+            {
+                var etnosUpdate = contextLNW.ЭтническийСостав.Where(el =>
+                    el.Страна == contextLNW.Страны.Where(c => c.Название == this.etnosCountry)
+                        .Select(c => c.Код).FirstOrDefault()
+                    && el.Язык == contextLNW.Языки.Where(c => c.Название == this.etnosLanguage)
+                        .Select(c => c.Код).FirstOrDefault()
+                    && el.Год == this.year).FirstOrDefault();
+                if (comboBoxEtnosCountryUpdate.SelectedIndex != -1)
+                {
+                    etnosUpdate.Страна = contextLNW.Страны
+                        .Where(el => el.Название == comboBoxEtnosCountryUpdate.Text)
+                        .Select(el => el.Код).FirstOrDefault();
+                }
+                if (comboBoxEtnosLanguageUpdate.SelectedIndex != -1){
+                    etnosUpdate.Язык = contextLNW.Языки
+                        .Where(el => el.Название == comboBoxEtnosLanguageUpdate.Text)
+                        .Select(el => el.Код).FirstOrDefault();
+                }
+                else
+                if (comboBoxYearUpdate.SelectedIndex != -1)
+                {
+                    etnosUpdate.Год = int.Parse(comboBoxYearUpdate.Text);
+                }
+                if (int.Parse(textBoxStrenghtUpdate.Text) > 0)
+                {
+                    etnosUpdate.Численность = int.Parse(textBoxStrenghtUpdate.Text);
+                }
+                contextLNW.SaveChanges();
+                form.SelectAll();
+            }
+            form.SelectAll();
+            return;
+        }
+
+        public void SelectAllIn(MainForm form)
+        {
+            form.SelectAll();
+            Console.WriteLine("I this");
         }
     }
 }

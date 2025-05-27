@@ -275,6 +275,7 @@ namespace CRUDApp
             this.buttonUpdate.TabIndex = 25;
             this.buttonUpdate.Text = "Обновить";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // FormUpdate
             // 
