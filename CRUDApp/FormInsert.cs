@@ -85,20 +85,16 @@ namespace CRUDApp
         private void btnCountryInsert_Click(object sender, EventArgs e)
         {
             listBoxInserted.Items.Clear();
-            switch (this.nameButton)
+            int countPeople = Convert.ToInt32(textBoxCountPeople.Text);
+            if (countPeople <= 0)
             {
-                case "btnInsertCountry":
-                    int countPeople = Convert.ToInt32(textBoxCountPeople.Text);
-                    if (countPeople <= 0)
-                    {
-                        listBoxInserted.Items.Add("Количество жителей должно быть положительным!");
-                        break;
-                    }
-
-                    if (IsOnlyLetters(textBoxNameCountry.Text) && IsOnlyLetters(textBoxCapital.Text))
-                    {
-                        var country = new Страны
-                        {
+                listBoxInserted.Items.Add("Количество жителей должно быть положительным!");
+                return;
+            }
+            if (IsOnlyLetters(textBoxNameCountry.Text) && IsOnlyLetters(textBoxCapital.Text))
+            {
+                var country = new Страны
+                {
                             Название = textBoxNameCountry.Text,
                             Столица = textBoxCapital.Text,
                             Материк = comboBoxContinent.Text,
@@ -114,67 +110,77 @@ namespace CRUDApp
                         {
                             listBoxInserted.Items.Add("Такая страна уже есть!");
                         }
-                        break;
+                        return;
                     }
                     else
                     {
                         listBoxInserted.Items.Add("Поля содержат запрещенные символы!");
-                        break;
+                        return;
                     }
-                case "btnInsertLanguage":
-                    if (IsOnlyLetters(textBoxNameLanguage.Text) && IsOnlyLetters(textBoxLanguageGroup.Text)
-                                                                && IsOnlyLetters(textBoxTypeSignSystem.Text))
-                    {
-                        var language = new Языки
-                        {
-                            Название = textBoxNameLanguage.Text,
-                            Языковая_группа = textBoxLanguageGroup.Text,
-                            Вид_знаковой_системы = textBoxTypeSignSystem.Text,
-                        };
-                        if (contextLNW.Языки.Where(el => el.Название == language.Название).ToList().Count == 0)
-                        {
-                            contextLNW.Языки.Add(language);
-                            contextLNW.SaveChanges();
-                            listBoxInserted.Items.Add("Новый язык успешно добавлен!");
-                        }
-                        else
-                        {
-                            listBoxInserted.Items.Add("Такой язык уже есть!");
-                        }
-                        break;
-                    }
-                    else
-                    {
-                        listBoxInserted.Items.Add("Поля содержат запрещенные символы!");
-                        break;
-                    }
-                case "btnInsertEtnos":
-                    int strenght = Convert.ToInt32(textBoxStrenght.Text);
-                    if (strenght <= 0)
-                    {
-                        listBoxInserted.Items.Add("Количество жителей должно быть положительным!");
-                        break;
-                    }
-                    var etnos = new ЭтническийСостав
-                    {
-                        Страна = contextLNW.Страны.Where(el => el.Название == comboBoxEtnosCountry.Text).SingleOrDefault(),
-                        Язык = Convert.ToInt32(comboBoxEtnosLanguage.Text),
-                        Год = Convert.ToInt32(comboBoxYear.Text),
-                        Численность = Convert.ToInt32(textBoxCountPeople.Text)                  
-                    };
-                    if (contextLNW.ЭтническийСостав.Where(el => el.Страна == etnos.Страна 
-                            && el.Язык == etnos.Язык).ToList().Count == 0)
-                    {
-                        contextLNW.ЭтническийСостав.Add(etnos);
-                        contextLNW.SaveChanges();
-                        listBoxInserted.Items.Add("Новая запись успешно добавлена!");
-                    }
-                    else
-                    {
-                        listBoxInserted.Items.Add("Такая запись уже есть!");
-                    }
-                    break;
             }
+
+        private void btnLanguageInsert_Click(object sender, EventArgs e)
+        {
+            listBoxInserted.Items.Clear();
+            if (IsOnlyLetters(textBoxNameLanguage.Text) && IsOnlyLetters(textBoxLanguageGroup.Text)
+                                                        && IsOnlyLetters(textBoxTypeSignSystem.Text))
+            {
+                var language = new Языки
+                {
+                    Название = textBoxNameLanguage.Text,
+                    Языковая_группа = textBoxLanguageGroup.Text,
+                    Вид_знаковой_системы = textBoxTypeSignSystem.Text,
+                };
+                if (contextLNW.Языки.Where(el => el.Название == language.Название).ToList().Count == 0)
+                {
+                    contextLNW.Языки.Add(language);
+                    contextLNW.SaveChanges();
+                    listBoxInserted.Items.Add("Новый язык успешно добавлен!");
+                }
+                else
+                {
+                    listBoxInserted.Items.Add("Такой язык уже есть!");
+                }
+                return;
+            }
+            else
+            {
+                listBoxInserted.Items.Add("Поля содержат запрещенные символы!");
+                return;
+            }
+        }
+        
+
+        private void btnEtnosInsert_Click(object sender, EventArgs e)
+        {
+            listBoxInserted.Items.Clear();
+            int strenght = Convert.ToInt32(textBoxStrenght.Text);
+            if (strenght <= 0)
+            {
+                listBoxInserted.Items.Add("Количество жителей должно быть положительным!");
+                return;
+            }
+            var etnos = new ЭтническийСостав
+            {
+                Страна = Convert.ToInt32(contextLNW.Страны.Where(el => el.Название == comboBoxEtnosCountry.Text)
+                    .Select(el => el.Код).SingleOrDefault()),
+                Язык = Convert.ToInt32(contextLNW.Языки.Where(el => el.Название == comboBoxEtnosLanguage.Text)
+                    .Select(el => el.Код).SingleOrDefault()),
+                Год = Convert.ToInt32(comboBoxYear.Text),
+                Численность = Convert.ToInt64(textBoxStrenght.Text)   
+            };
+            if (contextLNW.ЭтническийСостав.Where(el => el.Страна == etnos.Страна 
+                    && el.Язык == etnos.Язык && el.Год == etnos.Год).ToList().Count == 0)
+            {
+                contextLNW.ЭтническийСостав.Add(etnos);
+                contextLNW.SaveChanges();
+                listBoxInserted.Items.Add("Новая запись успешно добавлена!");
+            }
+            else
+            {
+                listBoxInserted.Items.Add("Такая запись уже есть!");
+            }
+            return;
         }
         
         private static bool IsOnlyLetters(string input)

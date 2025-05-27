@@ -36,6 +36,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnEtnosInsert = new System.Windows.Forms.Button();
+            this.textBoxStrenght = new System.Windows.Forms.TextBox();
+            this.comboBoxYear = new System.Windows.Forms.ComboBox();
+            this.comboBoxEtnosLanguage = new System.Windows.Forms.ComboBox();
+            this.comboBoxEtnosCountry = new System.Windows.Forms.ComboBox();
+            this.labelEtnosCountry = new System.Windows.Forms.Label();
+            this.labelEtnosLanguage = new System.Windows.Forms.Label();
+            this.labelStrenght = new System.Windows.Forms.Label();
+            this.labelYear = new System.Windows.Forms.Label();
             this.textBoxNameCountry = new System.Windows.Forms.TextBox();
             this.labelNameCountry = new System.Windows.Forms.Label();
             this.labelCapital = new System.Windows.Forms.Label();
@@ -51,18 +60,97 @@
             this.labelTypeSignSystem = new System.Windows.Forms.Label();
             this.textBoxLanguageGroup = new System.Windows.Forms.TextBox();
             this.textBoxTypeSignSystem = new System.Windows.Forms.TextBox();
-            this.btnLanguageInsert = new System.Windows.Forms.Button();
-            this.btnEtnosInsert = new System.Windows.Forms.Button();
-            this.labelEtnosCountry = new System.Windows.Forms.Label();
-            this.labelEtnosLanguage = new System.Windows.Forms.Label();
-            this.labelYear = new System.Windows.Forms.Label();
-            this.comboBoxEtnosCountry = new System.Windows.Forms.ComboBox();
-            this.comboBoxEtnosLanguage = new System.Windows.Forms.ComboBox();
-            this.comboBoxYear = new System.Windows.Forms.ComboBox();
-            this.textBoxStrenght = new System.Windows.Forms.TextBox();
-            this.labelStrenght = new System.Windows.Forms.Label();
             this.listBoxInserted = new System.Windows.Forms.ListBox();
+            this.btnLanguageInsert = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnEtnosInsert
+            // 
+            this.btnEtnosInsert.Location = new System.Drawing.Point(31, 228);
+            this.btnEtnosInsert.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEtnosInsert.Name = "btnEtnosInsert";
+            this.btnEtnosInsert.Size = new System.Drawing.Size(72, 19);
+            this.btnEtnosInsert.TabIndex = 16;
+            this.btnEtnosInsert.Text = "Добавить";
+            this.btnEtnosInsert.UseVisualStyleBackColor = true;
+            this.btnEtnosInsert.Visible = false;
+            this.btnEtnosInsert.Click += new System.EventHandler(this.btnEtnosInsert_Click);
+            // 
+            // textBoxStrenght
+            // 
+            this.textBoxStrenght.Location = new System.Drawing.Point(28, 203);
+            this.textBoxStrenght.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxStrenght.Name = "textBoxStrenght";
+            this.textBoxStrenght.Size = new System.Drawing.Size(91, 20);
+            this.textBoxStrenght.TabIndex = 23;
+            this.textBoxStrenght.Visible = false;
+            // 
+            // comboBoxYear
+            // 
+            this.comboBoxYear.Location = new System.Drawing.Point(28, 154);
+            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxYear.Name = "comboBoxYear";
+            this.comboBoxYear.Size = new System.Drawing.Size(91, 21);
+            this.comboBoxYear.TabIndex = 22;
+            this.comboBoxYear.Visible = false;
+            // 
+            // comboBoxEtnosLanguage
+            // 
+            this.comboBoxEtnosLanguage.Location = new System.Drawing.Point(28, 106);
+            this.comboBoxEtnosLanguage.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxEtnosLanguage.Name = "comboBoxEtnosLanguage";
+            this.comboBoxEtnosLanguage.Size = new System.Drawing.Size(91, 21);
+            this.comboBoxEtnosLanguage.TabIndex = 21;
+            this.comboBoxEtnosLanguage.Visible = false;
+            // 
+            // comboBoxEtnosCountry
+            // 
+            this.comboBoxEtnosCountry.Location = new System.Drawing.Point(28, 57);
+            this.comboBoxEtnosCountry.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxEtnosCountry.Name = "comboBoxEtnosCountry";
+            this.comboBoxEtnosCountry.Size = new System.Drawing.Size(91, 21);
+            this.comboBoxEtnosCountry.TabIndex = 20;
+            this.comboBoxEtnosCountry.Visible = false;
+            // 
+            // labelEtnosCountry
+            // 
+            this.labelEtnosCountry.Location = new System.Drawing.Point(28, 32);
+            this.labelEtnosCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEtnosCountry.Name = "labelEtnosCountry";
+            this.labelEtnosCountry.Size = new System.Drawing.Size(90, 18);
+            this.labelEtnosCountry.TabIndex = 17;
+            this.labelEtnosCountry.Text = "Выберите страну";
+            this.labelEtnosCountry.Visible = false;
+            // 
+            // labelEtnosLanguage
+            // 
+            this.labelEtnosLanguage.Location = new System.Drawing.Point(28, 81);
+            this.labelEtnosLanguage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEtnosLanguage.Name = "labelEtnosLanguage";
+            this.labelEtnosLanguage.Size = new System.Drawing.Size(90, 18);
+            this.labelEtnosLanguage.TabIndex = 18;
+            this.labelEtnosLanguage.Text = "Выберите язык";
+            this.labelEtnosLanguage.Visible = false;
+            // 
+            // labelStrenght
+            // 
+            this.labelStrenght.Location = new System.Drawing.Point(28, 179);
+            this.labelStrenght.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelStrenght.Name = "labelStrenght";
+            this.labelStrenght.Size = new System.Drawing.Size(90, 18);
+            this.labelStrenght.TabIndex = 23;
+            this.labelStrenght.Text = "Введите численность населения";
+            this.labelStrenght.Visible = false;
+            // 
+            // labelYear
+            // 
+            this.labelYear.Location = new System.Drawing.Point(28, 130);
+            this.labelYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelYear.Name = "labelYear";
+            this.labelYear.Size = new System.Drawing.Size(90, 18);
+            this.labelYear.TabIndex = 19;
+            this.labelYear.Text = "Выбери год";
+            this.labelYear.Visible = false;
             // 
             // textBoxNameCountry
             // 
@@ -147,7 +235,7 @@
             // 
             // btnCountryInsert
             // 
-            this.btnCountryInsert.Location = new System.Drawing.Point(28, 332);
+            this.btnCountryInsert.Location = new System.Drawing.Point(30, 332);
             this.btnCountryInsert.Margin = new System.Windows.Forms.Padding(2);
             this.btnCountryInsert.Name = "btnCountryInsert";
             this.btnCountryInsert.Size = new System.Drawing.Size(74, 19);
@@ -217,6 +305,15 @@
             this.textBoxTypeSignSystem.TabIndex = 14;
             this.textBoxTypeSignSystem.Visible = false;
             // 
+            // listBoxInserted
+            // 
+            this.listBoxInserted.FormattingEnabled = true;
+            this.listBoxInserted.Location = new System.Drawing.Point(29, 376);
+            this.listBoxInserted.Name = "listBoxInserted";
+            this.listBoxInserted.Size = new System.Drawing.Size(168, 17);
+            this.listBoxInserted.TabIndex = 25;
+            this.listBoxInserted.Visible = false;
+            // 
             // btnLanguageInsert
             // 
             this.btnLanguageInsert.Location = new System.Drawing.Point(31, 251);
@@ -227,107 +324,13 @@
             this.btnLanguageInsert.Text = "Добавить";
             this.btnLanguageInsert.UseVisualStyleBackColor = true;
             this.btnLanguageInsert.Visible = false;
-            // 
-            // btnEtnosInsert
-            // 
-            this.btnEtnosInsert.Location = new System.Drawing.Point(31, 228);
-            this.btnEtnosInsert.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEtnosInsert.Name = "btnEtnosInsert";
-            this.btnEtnosInsert.Size = new System.Drawing.Size(72, 19);
-            this.btnEtnosInsert.TabIndex = 16;
-            this.btnEtnosInsert.Text = "Добавить";
-            this.btnEtnosInsert.UseVisualStyleBackColor = true;
-            this.btnEtnosInsert.Visible = false;
-            // 
-            // labelEtnosCountry
-            // 
-            this.labelEtnosCountry.Location = new System.Drawing.Point(28, 32);
-            this.labelEtnosCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEtnosCountry.Name = "labelEtnosCountry";
-            this.labelEtnosCountry.Size = new System.Drawing.Size(90, 18);
-            this.labelEtnosCountry.TabIndex = 17;
-            this.labelEtnosCountry.Text = "Выберите страну";
-            this.labelEtnosCountry.Visible = false;
-            // 
-            // labelEtnosLanguage
-            // 
-            this.labelEtnosLanguage.Location = new System.Drawing.Point(28, 81);
-            this.labelEtnosLanguage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEtnosLanguage.Name = "labelEtnosLanguage";
-            this.labelEtnosLanguage.Size = new System.Drawing.Size(90, 18);
-            this.labelEtnosLanguage.TabIndex = 18;
-            this.labelEtnosLanguage.Text = "Выберите язык";
-            this.labelEtnosLanguage.Visible = false;
-            // 
-            // labelYear
-            // 
-            this.labelYear.Location = new System.Drawing.Point(28, 130);
-            this.labelYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelYear.Name = "labelYear";
-            this.labelYear.Size = new System.Drawing.Size(90, 18);
-            this.labelYear.TabIndex = 19;
-            this.labelYear.Text = "Выбери год";
-            this.labelYear.Visible = false;
-            // 
-            // comboBoxEtnosCountry
-            // 
-            this.comboBoxEtnosCountry.Location = new System.Drawing.Point(28, 57);
-            this.comboBoxEtnosCountry.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxEtnosCountry.Name = "comboBoxEtnosCountry";
-            this.comboBoxEtnosCountry.Size = new System.Drawing.Size(91, 21);
-            this.comboBoxEtnosCountry.TabIndex = 20;
-            this.comboBoxEtnosCountry.Visible = false;
-            // 
-            // comboBoxEtnosLanguage
-            // 
-            this.comboBoxEtnosLanguage.Location = new System.Drawing.Point(28, 106);
-            this.comboBoxEtnosLanguage.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxEtnosLanguage.Name = "comboBoxEtnosLanguage";
-            this.comboBoxEtnosLanguage.Size = new System.Drawing.Size(91, 21);
-            this.comboBoxEtnosLanguage.TabIndex = 21;
-            this.comboBoxEtnosLanguage.Visible = false;
-            // 
-            // comboBoxYear
-            // 
-            this.comboBoxYear.Location = new System.Drawing.Point(28, 154);
-            this.comboBoxYear.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(91, 21);
-            this.comboBoxYear.TabIndex = 22;
-            this.comboBoxYear.Visible = false;
-            // 
-            // textBoxStrenght
-            // 
-            this.textBoxStrenght.Location = new System.Drawing.Point(28, 203);
-            this.textBoxStrenght.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxStrenght.Name = "textBoxStrenght";
-            this.textBoxStrenght.Size = new System.Drawing.Size(91, 20);
-            this.textBoxStrenght.TabIndex = 23;
-            this.textBoxStrenght.Visible = false;
-            // 
-            // labelStrenght
-            // 
-            this.labelStrenght.Location = new System.Drawing.Point(28, 179);
-            this.labelStrenght.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelStrenght.Name = "labelStrenght";
-            this.labelStrenght.Size = new System.Drawing.Size(90, 18);
-            this.labelStrenght.TabIndex = 23;
-            this.labelStrenght.Text = "Введите численность населения";
-            this.labelStrenght.Visible = false;
-            // 
-            // listBoxInserted
-            // 
-            this.listBoxInserted.FormattingEnabled = true;
-            this.listBoxInserted.Location = new System.Drawing.Point(29, 376);
-            this.listBoxInserted.Name = "listBoxInserted";
-            this.listBoxInserted.Size = new System.Drawing.Size(168, 17);
-            this.listBoxInserted.TabIndex = 25;
-            this.listBoxInserted.Visible = false;
+            this.btnLanguageInsert.Click += new System.EventHandler(this.btnLanguageInsert_Click);
             // 
             // FormInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(235, 418);
             this.Controls.Add(this.listBoxInserted);
             this.Controls.Add(this.btnLanguageInsert);
@@ -355,12 +358,14 @@
             this.Controls.Add(this.comboBoxYear);
             this.Controls.Add(this.textBoxStrenght);
             this.Controls.Add(this.btnEtnosInsert);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormInsert";
-            this.Text = "Форма добавления данных";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btnLanguageInsert;
 
         #endregion
 
@@ -387,7 +392,6 @@
         private System.Windows.Forms.Label labelTypeSignSystem;
         private System.Windows.Forms.TextBox textBoxLanguageGroup;
         private System.Windows.Forms.TextBox textBoxTypeSignSystem;
-        private System.Windows.Forms.Button btnLanguageInsert;
         private System.Windows.Forms.Button btnEtnosInsert;
         private System.Windows.Forms.ListBox listBoxInserted;
     }

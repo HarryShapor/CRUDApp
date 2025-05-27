@@ -128,7 +128,7 @@ namespace CRUDApp
             // labelCountryDelete
             // 
             this.labelCountryDelete.AutoSize = true;
-            this.labelCountryDelete.Location = new System.Drawing.Point(575, 234);
+            this.labelCountryDelete.Location = new System.Drawing.Point(575, 247);
             this.labelCountryDelete.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountryDelete.Name = "labelCountryDelete";
             this.labelCountryDelete.Size = new System.Drawing.Size(165, 13);
@@ -148,7 +148,7 @@ namespace CRUDApp
             // labelCountryUpdate
             // 
             this.labelCountryUpdate.AutoSize = true;
-            this.labelCountryUpdate.Location = new System.Drawing.Point(562, 81);
+            this.labelCountryUpdate.Location = new System.Drawing.Point(575, 85);
             this.labelCountryUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountryUpdate.Name = "labelCountryUpdate";
             this.labelCountryUpdate.Size = new System.Drawing.Size(178, 13);
@@ -157,10 +157,10 @@ namespace CRUDApp
             // 
             // btnDeleteCountry
             // 
-            this.btnDeleteCountry.Location = new System.Drawing.Point(627, 332);
+            this.btnDeleteCountry.Location = new System.Drawing.Point(627, 344);
             this.btnDeleteCountry.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteCountry.Name = "btnDeleteCountry";
-            this.btnDeleteCountry.Size = new System.Drawing.Size(62, 23);
+            this.btnDeleteCountry.Size = new System.Drawing.Size(77, 32);
             this.btnDeleteCountry.TabIndex = 2;
             this.btnDeleteCountry.Text = "Удалить";
             this.btnDeleteCountry.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@ namespace CRUDApp
             this.btnUpdateCountry.Location = new System.Drawing.Point(610, 175);
             this.btnUpdateCountry.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateCountry.Name = "btnUpdateCountry";
-            this.btnUpdateCountry.Size = new System.Drawing.Size(79, 20);
+            this.btnUpdateCountry.Size = new System.Drawing.Size(94, 33);
             this.btnUpdateCountry.TabIndex = 1;
             this.btnUpdateCountry.Text = "Обновить";
             this.btnUpdateCountry.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@ namespace CRUDApp
             // 
             // buttonLanguageDelete
             // 
-            this.buttonLanguageDelete.Location = new System.Drawing.Point(617, 358);
+            this.buttonLanguageDelete.Location = new System.Drawing.Point(637, 359);
             this.buttonLanguageDelete.Name = "buttonLanguageDelete";
             this.buttonLanguageDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonLanguageDelete.TabIndex = 7;
@@ -226,7 +226,7 @@ namespace CRUDApp
             // 
             // buttonLanguageUpdate
             // 
-            this.buttonLanguageUpdate.Location = new System.Drawing.Point(617, 201);
+            this.buttonLanguageUpdate.Location = new System.Drawing.Point(637, 199);
             this.buttonLanguageUpdate.Name = "buttonLanguageUpdate";
             this.buttonLanguageUpdate.Size = new System.Drawing.Size(75, 23);
             this.buttonLanguageUpdate.TabIndex = 6;
@@ -236,7 +236,7 @@ namespace CRUDApp
             // comboBoxLanguageDelete
             // 
             this.comboBoxLanguageDelete.FormattingEnabled = true;
-            this.comboBoxLanguageDelete.Location = new System.Drawing.Point(591, 300);
+            this.comboBoxLanguageDelete.Location = new System.Drawing.Point(609, 300);
             this.comboBoxLanguageDelete.Name = "comboBoxLanguageDelete";
             this.comboBoxLanguageDelete.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLanguageDelete.TabIndex = 5;
@@ -245,7 +245,7 @@ namespace CRUDApp
             // comboBoxLanguageUpdate
             // 
             this.comboBoxLanguageUpdate.FormattingEnabled = true;
-            this.comboBoxLanguageUpdate.Location = new System.Drawing.Point(591, 141);
+            this.comboBoxLanguageUpdate.Location = new System.Drawing.Point(609, 141);
             this.comboBoxLanguageUpdate.Name = "comboBoxLanguageUpdate";
             this.comboBoxLanguageUpdate.Size = new System.Drawing.Size(121, 21);
             this.comboBoxLanguageUpdate.TabIndex = 4;
@@ -254,7 +254,7 @@ namespace CRUDApp
             // labelLanguageDelete
             // 
             this.labelLanguageDelete.AutoSize = true;
-            this.labelLanguageDelete.Location = new System.Drawing.Point(573, 259);
+            this.labelLanguageDelete.Location = new System.Drawing.Point(591, 259);
             this.labelLanguageDelete.Name = "labelLanguageDelete";
             this.labelLanguageDelete.Size = new System.Drawing.Size(157, 13);
             this.labelLanguageDelete.TabIndex = 3;
@@ -263,7 +263,7 @@ namespace CRUDApp
             // labelLanguageUpdate
             // 
             this.labelLanguageUpdate.AutoSize = true;
-            this.labelLanguageUpdate.Location = new System.Drawing.Point(573, 100);
+            this.labelLanguageUpdate.Location = new System.Drawing.Point(591, 102);
             this.labelLanguageUpdate.Name = "labelLanguageUpdate";
             this.labelLanguageUpdate.Size = new System.Drawing.Size(170, 13);
             this.labelLanguageUpdate.TabIndex = 2;
@@ -271,7 +271,7 @@ namespace CRUDApp
             // 
             // btnInsertLanguage
             // 
-            this.btnInsertLanguage.Location = new System.Drawing.Point(591, 41);
+            this.btnInsertLanguage.Location = new System.Drawing.Point(617, 46);
             this.btnInsertLanguage.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsertLanguage.Name = "btnInsertLanguage";
             this.btnInsertLanguage.Size = new System.Drawing.Size(106, 26);
@@ -310,7 +310,7 @@ namespace CRUDApp
             // labelEtnosYearUpdate
             // 
             this.labelEtnosYearUpdate.AutoSize = true;
-            this.labelEtnosYearUpdate.Location = new System.Drawing.Point(547, 195);
+            this.labelEtnosYearUpdate.Location = new System.Drawing.Point(547, 191);
             this.labelEtnosYearUpdate.Name = "labelEtnosYearUpdate";
             this.labelEtnosYearUpdate.Size = new System.Drawing.Size(77, 13);
             this.labelEtnosYearUpdate.TabIndex = 16;
@@ -355,7 +355,7 @@ namespace CRUDApp
             this.comboBoxEtnosLanguageDelete.FormattingEnabled = true;
             this.comboBoxEtnosLanguageDelete.Location = new System.Drawing.Point(670, 307);
             this.comboBoxEtnosLanguageDelete.Name = "comboBoxEtnosLanguageDelete";
-            this.comboBoxEtnosLanguageDelete.Size = new System.Drawing.Size(54, 21);
+            this.comboBoxEtnosLanguageDelete.Size = new System.Drawing.Size(83, 21);
             this.comboBoxEtnosLanguageDelete.TabIndex = 11;
             // 
             // comboBoxEtnosLanguageUpdate
@@ -363,7 +363,7 @@ namespace CRUDApp
             this.comboBoxEtnosLanguageUpdate.FormattingEnabled = true;
             this.comboBoxEtnosLanguageUpdate.Location = new System.Drawing.Point(661, 139);
             this.comboBoxEtnosLanguageUpdate.Name = "comboBoxEtnosLanguageUpdate";
-            this.comboBoxEtnosLanguageUpdate.Size = new System.Drawing.Size(54, 21);
+            this.comboBoxEtnosLanguageUpdate.Size = new System.Drawing.Size(92, 21);
             this.comboBoxEtnosLanguageUpdate.TabIndex = 10;
             // 
             // labelEtnosLanguageUpdate
@@ -389,7 +389,7 @@ namespace CRUDApp
             this.comboBoxEtnosCountryDelete.FormattingEnabled = true;
             this.comboBoxEtnosCountryDelete.Location = new System.Drawing.Point(547, 307);
             this.comboBoxEtnosCountryDelete.Name = "comboBoxEtnosCountryDelete";
-            this.comboBoxEtnosCountryDelete.Size = new System.Drawing.Size(60, 21);
+            this.comboBoxEtnosCountryDelete.Size = new System.Drawing.Size(91, 21);
             this.comboBoxEtnosCountryDelete.TabIndex = 7;
             // 
             // comboBoxEtnosCountryUpdate
@@ -397,7 +397,7 @@ namespace CRUDApp
             this.comboBoxEtnosCountryUpdate.FormattingEnabled = true;
             this.comboBoxEtnosCountryUpdate.Location = new System.Drawing.Point(547, 140);
             this.comboBoxEtnosCountryUpdate.Name = "comboBoxEtnosCountryUpdate";
-            this.comboBoxEtnosCountryUpdate.Size = new System.Drawing.Size(60, 21);
+            this.comboBoxEtnosCountryUpdate.Size = new System.Drawing.Size(91, 21);
             this.comboBoxEtnosCountryUpdate.TabIndex = 6;
             // 
             // labelEtnosCountryDelete
@@ -438,7 +438,7 @@ namespace CRUDApp
             // 
             // btnInsertEtnos
             // 
-            this.btnInsertEtnos.Location = new System.Drawing.Point(547, 40);
+            this.btnInsertEtnos.Location = new System.Drawing.Point(556, 42);
             this.btnInsertEtnos.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsertEtnos.Name = "btnInsertEtnos";
             this.btnInsertEtnos.Size = new System.Drawing.Size(188, 24);
@@ -482,14 +482,14 @@ namespace CRUDApp
         private System.Windows.Forms.Label labelCountryDelete;
         private System.Windows.Forms.Button btnInsertLanguage;
         private System.Windows.Forms.Button btnInsertEtnos;
-        private Button buttonLanguageDelete;
-        private Button buttonLanguageUpdate;
-        private ComboBox comboBoxLanguageDelete;
-        private ComboBox comboBoxLanguageUpdate;
-        private Label labelLanguageDelete;
-        private Label labelLanguageUpdate;
-        private ComboBox comboBoxEtnosCountryDelete;
-        private ComboBox comboBoxEtnosCountryUpdate;
+        private System.Windows.Forms.Button buttonLanguageDelete;
+        private System.Windows.Forms.Button buttonLanguageUpdate;
+        private System.Windows.Forms.ComboBox comboBoxLanguageDelete;
+        private System.Windows.Forms.ComboBox comboBoxLanguageUpdate;
+        private System.Windows.Forms.Label labelLanguageDelete;
+        private System.Windows.Forms.Label labelLanguageUpdate;
+        private System.Windows.Forms.ComboBox comboBoxEtnosCountryDelete;
+        private System.Windows.Forms.ComboBox comboBoxEtnosCountryUpdate;
         private Label labelEtnosCountryDelete;
         private Label labelEtnosCountryUpdate;
         private Button buttonEtnosUpdate;
@@ -498,13 +498,13 @@ namespace CRUDApp
         private ListView listViewLanguage;
         private ListView listViewEtnos;
         private Label labelEtnosLanguageUpdate;
-        private ComboBox comboBoxEtnosLanguageUpdate;
-        private ComboBox comboBoxEtnosLanguageDelete;
+        private System.Windows.Forms.ComboBox comboBoxEtnosLanguageUpdate;
+        private System.Windows.Forms.ComboBox comboBoxEtnosLanguageDelete;
         private Label labelEtnosLanguageDelete;
         private Label labelEtnosYearDelete;
-        private Label labelEtnosYearUpdate;
+        private System.Windows.Forms.Label labelEtnosYearUpdate;
         private ComboBox comboBoxEtnosYearUpdate;
-        private ComboBox comboBoxEtnosYearDelete;
+        private System.Windows.Forms.ComboBox comboBoxEtnosYearDelete;
     }
 }
 
