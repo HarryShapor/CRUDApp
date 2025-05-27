@@ -60,9 +60,9 @@ namespace CRUDApp
             // 
             // labelNameCountryUpdate
             // 
-            this.labelNameCountryUpdate.Location = new System.Drawing.Point(44, 9);
+            this.labelNameCountryUpdate.Location = new System.Drawing.Point(33, 9);
             this.labelNameCountryUpdate.Name = "labelNameCountryUpdate";
-            this.labelNameCountryUpdate.Size = new System.Drawing.Size(100, 23);
+            this.labelNameCountryUpdate.Size = new System.Drawing.Size(187, 23);
             this.labelNameCountryUpdate.TabIndex = 0;
             this.labelNameCountryUpdate.Text = "Страна";
             this.labelNameCountryUpdate.Visible = false;
@@ -140,7 +140,7 @@ namespace CRUDApp
             // 
             this.labelLanguage.Location = new System.Drawing.Point(43, 125);
             this.labelLanguage.Name = "labelLanguage";
-            this.labelLanguage.Size = new System.Drawing.Size(88, 19);
+            this.labelLanguage.Size = new System.Drawing.Size(211, 19);
             this.labelLanguage.TabIndex = 10;
             this.labelLanguage.Text = "Язык";
             this.labelLanguage.Visible = false;

@@ -438,6 +438,7 @@ namespace CRUDApp
             this.buttonEtnosDelete.TabIndex = 2;
             this.buttonEtnosDelete.Text = "Удалить";
             this.buttonEtnosDelete.UseVisualStyleBackColor = true;
+            this.buttonEtnosDelete.Click += new System.EventHandler(this.buttonEtnosDelete_Click);
             // 
             // btnInsertEtnos
             // 
@@ -496,7 +497,7 @@ namespace CRUDApp
         private Label labelEtnosCountryDelete;
         private Label labelEtnosCountryUpdate;
         private System.Windows.Forms.Button buttonEtnosUpdate;
-        private Button buttonEtnosDelete;
+        private System.Windows.Forms.Button buttonEtnosDelete;
         private ListView listViewCountry;
         private ListView listViewLanguage;
         private ListView listViewEtnos;

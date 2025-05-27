@@ -80,8 +80,24 @@ namespace CRUDApp
         
         private void btnUpdateCountry_Click(object sender, EventArgs e)
         {
-            Form form = new FormUpdate(btnUpdateCountry.Name);
-            form.Show();
+            int country = contextLNW.Страны.Where(el => el.Название == comboBoxCountryUpdate.Text)
+                .Select(el => el.Код).FirstOrDefault();
+            if (comboBoxCountryUpdate.SelectedIndex == -1)
+            {
+                MessageBox.Show("Страна не выбрана!");
+                return;
+            }
+
+            if (contextLNW.Языки.Where(el => el.Код == country).Count() != 0)
+            {
+                Form form = new FormUpdate(btnUpdateCountry.Name, country);
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Такой страны нет!");
+                return;
+            }
         }
         
         private void btnDeleteCountry_Click(object sender, EventArgs e)
@@ -125,8 +141,24 @@ namespace CRUDApp
 
         private void buttonLanguageUpdate_Click(object sender, EventArgs e)
         {
-            Form form = new FormUpdate(buttonLanguageUpdate.Name);
-            form.Show();
+            int language = contextLNW.Языки.Where(el => el.Название == comboBoxLanguageUpdate.Text)
+                .Select(el => el.Код).FirstOrDefault();
+            if (comboBoxLanguageUpdate.SelectedIndex == -1)
+            {
+                MessageBox.Show("Язык не выбран!");
+                return;
+            }
+
+            if (contextLNW.Языки.Where(el => el.Код == language).Count() != 0)
+            {
+                Form form = new FormUpdate(buttonLanguageUpdate.Name, language);
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Такой страны нет!");
+                return;
+            }
         }
         
         #endregion
@@ -214,7 +246,50 @@ namespace CRUDApp
             }
         }
         
-        #endregion
+        private void buttonEtnosDelete_Click(object sender, EventArgs e)
+        {
+            if (comboBoxEtnosCountryDelete.SelectedIndex == -1)
+            {
+                MessageBox.Show("Страна не выбрана!");
+                return;
+            }
+            if (comboBoxEtnosLanguageDelete.SelectedIndex == -1)
+            {
+                MessageBox.Show("Язык не выбран!");
+                return;
+            }
+            if (comboBoxEtnosYearDelete.SelectedIndex == -1)
+            {
+                MessageBox.Show("Год не выбран!");
+                return;
+            }
+            int year = int.Parse(comboBoxEtnosYearUpdate.Text);
+            ЭтническийСостав etnos = contextLNW.ЭтническийСостав.Where(el =>
+                el.Страна == contextLNW.Страны.Where(c => c.Название == comboBoxEtnosCountryUpdate.Text)
+                    .Select(c => c.Код).FirstOrDefault()
+                && el.Язык == contextLNW.Языки.Where(c => c.Название == comboBoxEtnosLanguageUpdate.Text)
+                    .Select(c => c.Код).FirstOrDefault()
+                && el.Год == year).FirstOrDefault();
+            if (etnos != null)
+            {
+                DialogResult dialogResult = MessageBox.Show("Sure", "Some Title", MessageBoxButtons.YesNo);
+                if(dialogResult == DialogResult.Yes)
+                {
+                    contextLNW.ЭтническийСостав.Remove(etnos);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Такой записи нет!");
+            }
+            
+        }
         
+        #endregion
+
     }
 }
