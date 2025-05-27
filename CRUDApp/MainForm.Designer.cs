@@ -175,6 +175,7 @@ namespace CRUDApp
             this.btnUpdateCountry.TabIndex = 1;
             this.btnUpdateCountry.Text = "Обновить";
             this.btnUpdateCountry.UseVisualStyleBackColor = true;
+            this.btnUpdateCountry.Click += new System.EventHandler(this.btnUpdateCountry_Click);
             // 
             // btnInsertCountry
             // 
@@ -232,6 +233,7 @@ namespace CRUDApp
             this.buttonLanguageUpdate.TabIndex = 6;
             this.buttonLanguageUpdate.Text = "Обновить";
             this.buttonLanguageUpdate.UseVisualStyleBackColor = true;
+            this.buttonLanguageUpdate.Click += new System.EventHandler(this.buttonLanguageUpdate_Click);
             // 
             // comboBoxLanguageDelete
             // 
@@ -426,6 +428,7 @@ namespace CRUDApp
             this.buttonEtnosUpdate.TabIndex = 3;
             this.buttonEtnosUpdate.Text = "Обновить";
             this.buttonEtnosUpdate.UseVisualStyleBackColor = true;
+            this.buttonEtnosUpdate.Click += new System.EventHandler(this.buttonEtnosUpdate_Click);
             // 
             // buttonEtnosDelete
             // 
@@ -492,7 +495,7 @@ namespace CRUDApp
         private System.Windows.Forms.ComboBox comboBoxEtnosCountryUpdate;
         private Label labelEtnosCountryDelete;
         private Label labelEtnosCountryUpdate;
-        private Button buttonEtnosUpdate;
+        private System.Windows.Forms.Button buttonEtnosUpdate;
         private Button buttonEtnosDelete;
         private ListView listViewCountry;
         private ListView listViewLanguage;

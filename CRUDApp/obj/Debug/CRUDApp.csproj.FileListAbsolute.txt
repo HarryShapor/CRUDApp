@@ -30,3 +30,4 @@ H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDAp
 H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.csproj.Up2Date
 H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.exe
 H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.pdb
+H:\РГРТУ\3 курс\КСПБД\Application\CRUDApp\CRUDApp\obj\Debug\CRUDApp.FormUpdate.resources

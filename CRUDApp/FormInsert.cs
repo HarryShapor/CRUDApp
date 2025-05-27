@@ -44,7 +44,7 @@ namespace CRUDApp
                 comboBoxContinent.Items.Add("Южная Америка");
                 comboBoxContinent.Items.Add("Антарктида");
                 comboBoxContinent.Items.Add("Австралия");
-                //comboBoxContinent.Items.Add(null);
+                // comboBoxContinent.Items.Add("");
             }
             else if (this.nameButton == "btnInsertLanguage")
             {
@@ -81,18 +81,19 @@ namespace CRUDApp
                 }
             }
         }
-
+        
         private void btnCountryInsert_Click(object sender, EventArgs e)
         {
             listBoxInserted.Items.Clear();
             int countPeople = Convert.ToInt32(textBoxCountPeople.Text);
             if (countPeople <= 0)
             {
-                listBoxInserted.Items.Add("Количество жителей должно быть положительным!");
+                MessageBox.Show("Количество жителей должно быть положительным!");
                 return;
             }
             if (IsOnlyLetters(textBoxNameCountry.Text) && IsOnlyLetters(textBoxCapital.Text))
             {
+                string continent = comboBoxContinent.Text == "" ? null : comboBoxContinent.Text;
                 var country = new Страны
                 {
                             Название = textBoxNameCountry.Text,
@@ -108,13 +109,13 @@ namespace CRUDApp
                         }
                         else
                         {
-                            listBoxInserted.Items.Add("Такая страна уже есть!");
+                            MessageBox.Show("Такая страна уже есть!");
                         }
                         return;
                     }
                     else
                     {
-                        listBoxInserted.Items.Add("Поля содержат запрещенные символы!");
+                        MessageBox.Show("Поля содержат запрещенные символы!");
                         return;
                     }
             }
@@ -139,13 +140,13 @@ namespace CRUDApp
                 }
                 else
                 {
-                    listBoxInserted.Items.Add("Такой язык уже есть!");
+                    MessageBox.Show("Такой язык уже есть!");
                 }
                 return;
             }
             else
             {
-                listBoxInserted.Items.Add("Поля содержат запрещенные символы!");
+                MessageBox.Show("Поля содержат запрещенные символы!");
                 return;
             }
         }
@@ -157,7 +158,7 @@ namespace CRUDApp
             int strenght = Convert.ToInt32(textBoxStrenght.Text);
             if (strenght <= 0)
             {
-                listBoxInserted.Items.Add("Количество жителей должно быть положительным!");
+                MessageBox.Show("Количество жителей должно быть положительным!");
                 return;
             }
             var etnos = new ЭтническийСостав
@@ -178,7 +179,7 @@ namespace CRUDApp
             }
             else
             {
-                listBoxInserted.Items.Add("Такая запись уже есть!");
+                MessageBox.Show("Такая запись уже есть!");
             }
             return;
         }

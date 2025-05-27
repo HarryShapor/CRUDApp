@@ -77,7 +77,13 @@ namespace CRUDApp
             form.Show();
 
         }
-
+        
+        private void btnUpdateCountry_Click(object sender, EventArgs e)
+        {
+            Form form = new FormUpdate(btnUpdateCountry.Name);
+            form.Show();
+        }
+        
         private void btnDeleteCountry_Click(object sender, EventArgs e)
         {
             var country = contextLNW.Страны
@@ -117,6 +123,12 @@ namespace CRUDApp
             form.Show();
         }
 
+        private void buttonLanguageUpdate_Click(object sender, EventArgs e)
+        {
+            Form form = new FormUpdate(buttonLanguageUpdate.Name);
+            form.Show();
+        }
+        
         #endregion
 
         #region Etnos
@@ -166,6 +178,43 @@ namespace CRUDApp
             form.Show();
         }
 
+        private void buttonEtnosUpdate_Click(object sender, EventArgs e)
+        {
+            if (comboBoxEtnosCountryUpdate.SelectedIndex == -1)
+            {
+                MessageBox.Show("Страна не выбрана!");
+                return;
+            }
+            if (comboBoxEtnosLanguageUpdate.SelectedIndex == -1)
+            {
+                MessageBox.Show("Язык не выбран!");
+                return;
+            }
+            if (comboBoxEtnosYearUpdate.SelectedIndex == -1)
+            {
+                MessageBox.Show("Год не выбран!");
+                return;
+            }
+
+            int year = int.Parse(comboBoxEtnosYearUpdate.Text);
+            if (contextLNW.ЭтническийСостав.Where(el => 
+                    el.Страна == contextLNW.Страны.Where(c => c.Название == comboBoxEtnosCountryUpdate.Text)
+                        .Select(c => c.Код).FirstOrDefault()
+                    && el.Язык == contextLNW.Языки.Where(c => c.Название == comboBoxEtnosLanguageUpdate.Text)
+                        .Select(c => c.Код).FirstOrDefault()
+                    && el.Год == year).Count() != 0)
+            {
+                Form form = new FormUpdate(buttonEtnosUpdate.Name, comboBoxEtnosCountryUpdate.Text,
+                    comboBoxEtnosLanguageUpdate.Text, comboBoxEtnosYearUpdate.Text);
+                form.Show();
+            }
+            else
+            {
+                MessageBox.Show("Такой записи нет!");
+            }
+        }
+        
         #endregion
+        
     }
 }
