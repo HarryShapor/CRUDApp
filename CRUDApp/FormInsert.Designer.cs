@@ -60,7 +60,6 @@
             this.labelTypeSignSystem = new System.Windows.Forms.Label();
             this.textBoxLanguageGroup = new System.Windows.Forms.TextBox();
             this.textBoxTypeSignSystem = new System.Windows.Forms.TextBox();
-            this.listBoxInserted = new System.Windows.Forms.ListBox();
             this.btnLanguageInsert = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -305,15 +304,6 @@
             this.textBoxTypeSignSystem.TabIndex = 14;
             this.textBoxTypeSignSystem.Visible = false;
             // 
-            // listBoxInserted
-            // 
-            this.listBoxInserted.FormattingEnabled = true;
-            this.listBoxInserted.Location = new System.Drawing.Point(29, 376);
-            this.listBoxInserted.Name = "listBoxInserted";
-            this.listBoxInserted.Size = new System.Drawing.Size(168, 17);
-            this.listBoxInserted.TabIndex = 25;
-            this.listBoxInserted.Visible = false;
-            // 
             // btnLanguageInsert
             // 
             this.btnLanguageInsert.Location = new System.Drawing.Point(31, 251);
@@ -332,7 +322,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(235, 418);
-            this.Controls.Add(this.listBoxInserted);
             this.Controls.Add(this.btnLanguageInsert);
             this.Controls.Add(this.textBoxTypeSignSystem);
             this.Controls.Add(this.textBoxLanguageGroup);
@@ -393,6 +382,5 @@
         private System.Windows.Forms.TextBox textBoxLanguageGroup;
         private System.Windows.Forms.TextBox textBoxTypeSignSystem;
         private System.Windows.Forms.Button btnEtnosInsert;
-        private System.Windows.Forms.ListBox listBoxInserted;
     }
 }

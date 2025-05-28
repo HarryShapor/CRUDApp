@@ -24,7 +24,6 @@ namespace CRUDApp
             this.form = form;
             this.nameButton = nameBtn;
             InitializeComponent();
-            buttonUpdate.Visible = true;
             if (this.nameButton == "btnUpdateCountry")
             {
                 this.country = code;
@@ -38,7 +37,7 @@ namespace CRUDApp
                 textBoxNameCountryUpdate.Visible = true;
                 textBoxCapitalUpdate.Visible = true;
                 textBoxCountPeopleUpdate.Visible = true;
-                
+                buttonUpdateCountry.Visible = true;
                 // this.listBoxInserted.Location = new System.Drawing.Point(29, 376);
                 string country = contextLNW.Страны.Where(el => el.Код == this.country)
                     .Select(el => el.Название).FirstOrDefault();
@@ -70,7 +69,8 @@ namespace CRUDApp
                 textBoxNameLanguageUpdate.Visible = true;
                 textBoxLanguageGroupUpdate.Visible = true;
                 textBoxSignSystemTypeUpdate.Visible = true;
-
+                buttonUpdateLanguage.Visible = true;
+                
                 string language = contextLNW.Языки.Where(el => el.Код == this.language)
                     .Select(el => el.Название).FirstOrDefault();
                 labelLanguage.Text = "Изменяемый язык " + language;
@@ -98,6 +98,7 @@ namespace CRUDApp
             comboBoxEtnosCountryUpdate.Visible = true;
             comboBoxEtnosLanguageUpdate.Visible = true;
             labelStrenght.Visible = true;
+            buttonUpdateEtnos.Visible = true;
             // this.listBoxInserted.Location = new System.Drawing.Point(29, 300);
                 
             comboBoxEtnosCountryUpdate.Text = country;
@@ -105,12 +106,14 @@ namespace CRUDApp
             comboBoxYearUpdate.Text = year;
             int yearInt = int.Parse(year);
             this.year = yearInt;
-            textBoxStrenghtUpdate.Text = contextLNW.ЭтническийСостав.Where(el =>
+            string strenght = contextLNW.ЭтническийСостав.Where(el =>
                 el.Страна == contextLNW.Страны.Where(c => c.Название == this.etnosCountry)
                     .Select(c => c.Код).FirstOrDefault()
                 && el.Язык == contextLNW.Языки.Where(c => c.Название == this.etnosLanguage)
                     .Select(c => c.Код).FirstOrDefault()
                 && el.Год == yearInt).Select(el => el.Численность).FirstOrDefault().ToString();
+            Console.WriteLine(strenght.GetType());
+            textBoxStrenghtUpdate.Text = strenght;
             
             cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryUpdate);
             cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageUpdate);
@@ -123,9 +126,6 @@ namespace CRUDApp
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            this.form = form;
-            if (this.nameButton == "btnUpdateCountry")
-            {
                 var countryUpdate = contextLNW.Страны.Where(el => el.Код == this.country).FirstOrDefault();
                 if (textBoxNameCountryUpdate.Text != "")
                 {
@@ -146,69 +146,68 @@ namespace CRUDApp
                 {
                     countryUpdate.Количество_жителей = int.Parse(textBoxCountPeopleUpdate.Text);
                 }
+                // contextLNW.Страны.Where()
                 contextLNW.SaveChanges();
-                form.SelectAll();
-            }
-            else if (this.nameButton == "buttonLanguageUpdate")
+                MessageBox.Show("Данные успешно обновлены!");
+                // form.SelectAll();
+                return;
+        }
+        
+
+        private void buttonUpdateLanguage_Click(object sender, EventArgs e)
+        {
+            var languageUpdate = contextLNW.Языки.Where(el => el.Код == this.language).FirstOrDefault();
+            if (textBoxNameLanguageUpdate.Text != "")
             {
-                var languageUpdate = contextLNW.Языки.Where(el => el.Код == this.language).FirstOrDefault();
-                if (textBoxNameLanguageUpdate.Text != "")
-                {
-                    languageUpdate.Название = textBoxNameLanguageUpdate.Text;
-                }
-                if (textBoxSignSystemTypeUpdate.Text != ""){
-                    languageUpdate.Вид_знаковой_системы = textBoxSignSystemTypeUpdate.Text;
-                }
-                else
-                {
-                    languageUpdate.Вид_знаковой_системы = null;
-                }
-                if (textBoxLanguageGroupUpdate.Text != "")
-                {
-                    languageUpdate.Языковая_группа = textBoxLanguageGroupUpdate.Text;
-                }
-                contextLNW.SaveChanges();
-                form.SelectAll();
+                languageUpdate.Название = textBoxNameLanguageUpdate.Text;
             }
-            else if (this.nameButton == "buttonEtnosUpdate")
+            if (textBoxSignSystemTypeUpdate.Text != ""){
+                languageUpdate.Вид_знаковой_системы = textBoxSignSystemTypeUpdate.Text;
+            }
+            else
             {
-                var etnosUpdate = contextLNW.ЭтническийСостав.Where(el =>
-                    el.Страна == contextLNW.Страны.Where(c => c.Название == this.etnosCountry)
-                        .Select(c => c.Код).FirstOrDefault()
-                    && el.Язык == contextLNW.Языки.Where(c => c.Название == this.etnosLanguage)
-                        .Select(c => c.Код).FirstOrDefault()
-                    && el.Год == this.year).FirstOrDefault();
-                if (comboBoxEtnosCountryUpdate.SelectedIndex != -1)
-                {
-                    etnosUpdate.Страна = contextLNW.Страны
-                        .Where(el => el.Название == comboBoxEtnosCountryUpdate.Text)
-                        .Select(el => el.Код).FirstOrDefault();
-                }
-                if (comboBoxEtnosLanguageUpdate.SelectedIndex != -1){
-                    etnosUpdate.Язык = contextLNW.Языки
-                        .Where(el => el.Название == comboBoxEtnosLanguageUpdate.Text)
-                        .Select(el => el.Код).FirstOrDefault();
-                }
-                else
-                if (comboBoxYearUpdate.SelectedIndex != -1)
-                {
-                    etnosUpdate.Год = int.Parse(comboBoxYearUpdate.Text);
-                }
-                if (int.Parse(textBoxStrenghtUpdate.Text) > 0)
-                {
-                    etnosUpdate.Численность = int.Parse(textBoxStrenghtUpdate.Text);
-                }
-                contextLNW.SaveChanges();
-                form.SelectAll();
+                languageUpdate.Вид_знаковой_системы = null;
             }
+            if (textBoxLanguageGroupUpdate.Text != "")
+            {
+                languageUpdate.Языковая_группа = textBoxLanguageGroupUpdate.Text;
+            }
+            contextLNW.SaveChanges();
             form.SelectAll();
             return;
         }
 
-        public void SelectAllIn(MainForm form)
+        private void buttonUpdateEtnos_Click(object sender, EventArgs e)
         {
+            var etnosUpdate = contextLNW.ЭтническийСостав.Where(el =>
+                el.Страна == contextLNW.Страны.Where(c => c.Название == this.etnosCountry)
+                    .Select(c => c.Код).FirstOrDefault()
+                && el.Язык == contextLNW.Языки.Where(c => c.Название == this.etnosLanguage)
+                    .Select(c => c.Код).FirstOrDefault()
+                && el.Год == this.year).FirstOrDefault();
+            if (comboBoxEtnosCountryUpdate.SelectedIndex != -1)
+            {
+                etnosUpdate.Страна = contextLNW.Страны
+                    .Where(el => el.Название == comboBoxEtnosCountryUpdate.Text)
+                    .Select(el => el.Код).FirstOrDefault();
+            }
+            if (comboBoxEtnosLanguageUpdate.SelectedIndex != -1){
+                etnosUpdate.Язык = contextLNW.Языки
+                    .Where(el => el.Название == comboBoxEtnosLanguageUpdate.Text)
+                    .Select(el => el.Код).FirstOrDefault();
+            }
+            else
+            if (comboBoxYearUpdate.SelectedIndex != -1)
+            {
+                etnosUpdate.Год = int.Parse(comboBoxYearUpdate.Text);
+            }
+            if (int.Parse(textBoxStrenghtUpdate.Text) > 0)
+            {
+                etnosUpdate.Численность = int.Parse(textBoxStrenghtUpdate.Text);
+            }
+            contextLNW.SaveChanges();
             form.SelectAll();
-            Console.WriteLine("I this");
+            return;
         }
     }
 }

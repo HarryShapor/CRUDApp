@@ -25,7 +25,6 @@ namespace CRUDApp
             this.form = form;
             this.nameButton = nameBtn;
             InitializeComponent();
-            listBoxInserted.Visible = true;
             if (this.nameButton == "btnInsertCountry")
             {
                 this.ClientSize = new System.Drawing.Size(200, 400);
@@ -38,7 +37,6 @@ namespace CRUDApp
                 textBoxCapital.Visible = true;
                 textBoxCountPeople.Visible = true;
                 btnCountryInsert.Visible = true;
-                this.listBoxInserted.Location = new System.Drawing.Point(29, 376);
 
                 comboBoxContinent.Items.Add("Евразия");
                 comboBoxContinent.Items.Add("Африка");
@@ -58,7 +56,6 @@ namespace CRUDApp
                 textBoxNameLanguage.Visible = true;
                 textBoxLanguageGroup.Visible = true;
                 btnLanguageInsert.Visible = true;
-                this.listBoxInserted.Location = new System.Drawing.Point(29, 300);
             }
             else if (this.nameButton == "btnInsertEtnos")
             {
@@ -72,7 +69,6 @@ namespace CRUDApp
                 comboBoxEtnosCountry.Visible = true;
                 btnEtnosInsert.Visible = true;
                 labelStrenght.Visible = true;
-                this.listBoxInserted.Location = new System.Drawing.Point(29, 300);
                 
                 cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountry);
                 cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguage);
@@ -86,7 +82,6 @@ namespace CRUDApp
         
         private void btnCountryInsert_Click(object sender, EventArgs e)
         {
-            listBoxInserted.Items.Clear();
             int countPeople = Convert.ToInt32(textBoxCountPeople.Text);
             if (countPeople <= 0)
             {
@@ -107,7 +102,7 @@ namespace CRUDApp
                         {
                             contextLNW.Страны.Add(country);
                             contextLNW.SaveChanges();
-                            listBoxInserted.Items.Add("Новая страна успешно добавлена!");
+                            MessageBox.Show("Новая страна успешно добавлена!");
                             form.SelectAll();
                         }
                         else
@@ -125,7 +120,6 @@ namespace CRUDApp
 
         private void btnLanguageInsert_Click(object sender, EventArgs e)
         {
-            listBoxInserted.Items.Clear();
             if (IsOnlyLetters(textBoxNameLanguage.Text) && IsOnlyLetters(textBoxLanguageGroup.Text)
                                                         && IsOnlyLetters(textBoxTypeSignSystem.Text))
             {
@@ -139,7 +133,7 @@ namespace CRUDApp
                 {
                     contextLNW.Языки.Add(language);
                     contextLNW.SaveChanges();
-                    listBoxInserted.Items.Add("Новый язык успешно добавлен!");
+                    MessageBox.Show("Новый язык успешно добавлен!");
                     form.SelectAll();
                 }
                 else
@@ -158,7 +152,6 @@ namespace CRUDApp
 
         private void btnEtnosInsert_Click(object sender, EventArgs e)
         {
-            listBoxInserted.Items.Clear();
             int strenght = Convert.ToInt32(textBoxStrenght.Text);
             if (strenght <= 0)
             {
@@ -179,7 +172,7 @@ namespace CRUDApp
             {
                 contextLNW.ЭтническийСостав.Add(etnos);
                 contextLNW.SaveChanges();
-                listBoxInserted.Items.Add("Новая запись успешно добавлена!");
+                MessageBox.Show("Новая запись успешно добавлена!");
                 form.SelectAll();
             }
             else

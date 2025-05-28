@@ -48,12 +48,10 @@ namespace CRUDApp
             cb.GetColumnInComboBox("Языки", "Название", comboBoxLanguageUpdate);
             cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageDelete);
             cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageUpdate);
-            
             SelectCountry();
             SelectLanguage();
             SelectEtnos();
             setYear();
-            Console.WriteLine("I am blyat");
         }
         
 
@@ -79,6 +77,11 @@ namespace CRUDApp
             }
         }
 
+        public void RefreshData()
+        {
+            listViewCountry.Items.Clear();
+            SelectCountry(); 
+        }
         
         private void listViewCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,7 +106,7 @@ namespace CRUDApp
                 return;
             }
 
-            if (contextLNW.Языки.Where(el => el.Код == country).Count() != 0)
+            if (contextLNW.Страны.Where(el => el.Код == country).Count() != 0)
             {
                 Form form = new FormUpdate(btnUpdateCountry.Name, country, this);
                 form.Show();
@@ -405,6 +408,32 @@ namespace CRUDApp
         }
         
         #endregion
-        
+
+        private void buttonRefreshDataCountry_Click(object sender, EventArgs e)
+        {
+            cb.GetColumnInComboBox("Страны","Название", comboBoxCountryDelete);
+            cb.GetColumnInComboBox("Страны", "Название", comboBoxCountryUpdate);
+            cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryDelete);
+            cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryUpdate);
+            SelectCountry();
+            SelectEtnos();
+        }
+
+        private void buttonRefreshDataLanguage_Click(object sender, EventArgs e)
+        {
+            listViewLanguage.Items.Clear();
+            cb.GetColumnInComboBox("Языки", "Название", comboBoxLanguageDelete);
+            cb.GetColumnInComboBox("Языки", "Название", comboBoxLanguageUpdate);
+            cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageDelete);
+            cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageUpdate);
+            SelectLanguage();
+            SelectEtnos();
+        }
+
+        private void buttonRefreshDataEtnos_Click(object sender, EventArgs e)
+        {
+            SelectEtnos();
+            setYear();
+        }
     }
 }

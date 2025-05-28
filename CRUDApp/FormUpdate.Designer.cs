@@ -55,7 +55,9 @@ namespace CRUDApp
             this.textBoxStrenghtUpdate = new System.Windows.Forms.TextBox();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelStrenght = new System.Windows.Forms.Label();
-            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonUpdateCountry = new System.Windows.Forms.Button();
+            this.buttonUpdateLanguage = new System.Windows.Forms.Button();
+            this.buttonUpdateEtnos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelNameCountryUpdate
@@ -267,22 +269,47 @@ namespace CRUDApp
             this.labelStrenght.Text = "Численность";
             this.labelStrenght.Visible = false;
             // 
-            // buttonUpdate
+            // buttonUpdateCountry
             // 
-            this.buttonUpdate.Location = new System.Drawing.Point(614, 135);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(83, 38);
-            this.buttonUpdate.TabIndex = 25;
-            this.buttonUpdate.Text = "Обновить";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            this.buttonUpdateCountry.Location = new System.Drawing.Point(608, 50);
+            this.buttonUpdateCountry.Name = "buttonUpdateCountry";
+            this.buttonUpdateCountry.Size = new System.Drawing.Size(83, 38);
+            this.buttonUpdateCountry.TabIndex = 25;
+            this.buttonUpdateCountry.Text = "Обновить";
+            this.buttonUpdateCountry.UseVisualStyleBackColor = true;
+            this.buttonUpdateCountry.Visible = false;
+            this.buttonUpdateCountry.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // buttonUpdateLanguage
+            // 
+            this.buttonUpdateLanguage.Location = new System.Drawing.Point(608, 173);
+            this.buttonUpdateLanguage.Name = "buttonUpdateLanguage";
+            this.buttonUpdateLanguage.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdateLanguage.TabIndex = 26;
+            this.buttonUpdateLanguage.Text = "Обновить";
+            this.buttonUpdateLanguage.UseVisualStyleBackColor = true;
+            this.buttonUpdateLanguage.Visible = false;
+            this.buttonUpdateLanguage.Click += new System.EventHandler(this.buttonUpdateLanguage_Click);
+            // 
+            // buttonUpdateEtnos
+            // 
+            this.buttonUpdateEtnos.Location = new System.Drawing.Point(608, 270);
+            this.buttonUpdateEtnos.Name = "buttonUpdateEtnos";
+            this.buttonUpdateEtnos.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdateEtnos.TabIndex = 27;
+            this.buttonUpdateEtnos.Text = "Обновить";
+            this.buttonUpdateEtnos.UseVisualStyleBackColor = true;
+            this.buttonUpdateEtnos.Visible = false;
+            this.buttonUpdateEtnos.Click += new System.EventHandler(this.buttonUpdateEtnos_Click);
             // 
             // FormUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 326);
-            this.Controls.Add(this.buttonUpdate);
+            this.Controls.Add(this.buttonUpdateEtnos);
+            this.Controls.Add(this.buttonUpdateLanguage);
+            this.Controls.Add(this.buttonUpdateCountry);
             this.Controls.Add(this.labelStrenght);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.textBoxStrenghtUpdate);
@@ -313,7 +340,10 @@ namespace CRUDApp
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.Button buttonUpdateLanguage;
+        private System.Windows.Forms.Button buttonUpdateEtnos;
+
+        private System.Windows.Forms.Button buttonUpdateCountry;
 
         private System.Windows.Forms.Label labelLanguageGroup;
 
