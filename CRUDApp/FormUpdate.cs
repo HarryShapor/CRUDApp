@@ -27,7 +27,7 @@ namespace CRUDApp
             if (this.nameButton == "btnUpdateCountry")
             {
                 this.country = code;
-                // this.ClientSize = new System.Drawing.Size(200, 400);
+                this.ClientSize = new System.Drawing.Size(600, 100);
                 labelNameCountryUpdate.Visible = true;
                 labelNameCountry.Visible = true;
                 labelCapital.Visible = true;
@@ -60,7 +60,7 @@ namespace CRUDApp
             }
             else if (this.nameButton == "buttonLanguageUpdate")
             {
-                // this.ClientSize = new System.Drawing.Size(200, 330);
+                this.ClientSize = new System.Drawing.Size(500, 100);
                 this.language = code;
                 labelNameLanguage.Visible = true;
                 labelLanguageGroup.Visible = true;
@@ -89,7 +89,7 @@ namespace CRUDApp
             this.nameButton = nameBtn;
             this.form = form;
             InitializeComponent();
-            // this.ClientSize = new System.Drawing.Size(200, 330);
+            this.ClientSize = new System.Drawing.Size(500, 80);
             labelEtnosCountry.Visible = true;
             labelEtnosLanguage.Visible = true;
             labelYear.Visible = true;
@@ -106,13 +106,14 @@ namespace CRUDApp
             comboBoxYearUpdate.Text = year;
             int yearInt = int.Parse(year);
             this.year = yearInt;
+            this.etnosCountry = country;
+            this.etnosLanguage = language;
             string strenght = contextLNW.ЭтническийСостав.Where(el =>
-                el.Страна == contextLNW.Страны.Where(c => c.Название == this.etnosCountry)
+                el.Страна == contextLNW.Страны.Where(c => c.Название == country)
                     .Select(c => c.Код).FirstOrDefault()
-                && el.Язык == contextLNW.Языки.Where(c => c.Название == this.etnosLanguage)
+                && el.Язык == contextLNW.Языки.Where(c => c.Название == language)
                     .Select(c => c.Код).FirstOrDefault()
                 && el.Год == yearInt).Select(el => el.Численность).FirstOrDefault().ToString();
-            Console.WriteLine(strenght.GetType());
             textBoxStrenghtUpdate.Text = strenght;
             
             cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryUpdate);
@@ -149,7 +150,6 @@ namespace CRUDApp
                 // contextLNW.Страны.Where()
                 contextLNW.SaveChanges();
                 MessageBox.Show("Данные успешно обновлены!");
-                // form.SelectAll();
                 return;
         }
         
@@ -173,7 +173,6 @@ namespace CRUDApp
                 languageUpdate.Языковая_группа = textBoxLanguageGroupUpdate.Text;
             }
             contextLNW.SaveChanges();
-            form.SelectAll();
             return;
         }
 
@@ -206,7 +205,6 @@ namespace CRUDApp
                 etnosUpdate.Численность = int.Parse(textBoxStrenghtUpdate.Text);
             }
             contextLNW.SaveChanges();
-            form.SelectAll();
             return;
         }
     }

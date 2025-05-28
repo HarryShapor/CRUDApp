@@ -62,7 +62,7 @@ namespace CRUDApp
             // 
             // labelNameCountryUpdate
             // 
-            this.labelNameCountryUpdate.Location = new System.Drawing.Point(33, 9);
+            this.labelNameCountryUpdate.Location = new System.Drawing.Point(20, 10);
             this.labelNameCountryUpdate.Name = "labelNameCountryUpdate";
             this.labelNameCountryUpdate.Size = new System.Drawing.Size(187, 23);
             this.labelNameCountryUpdate.TabIndex = 0;
@@ -71,7 +71,7 @@ namespace CRUDApp
             // 
             // textBoxNameCountryUpdate
             // 
-            this.textBoxNameCountryUpdate.Location = new System.Drawing.Point(33, 68);
+            this.textBoxNameCountryUpdate.Location = new System.Drawing.Point(20, 60);
             this.textBoxNameCountryUpdate.Name = "textBoxNameCountryUpdate";
             this.textBoxNameCountryUpdate.Size = new System.Drawing.Size(100, 20);
             this.textBoxNameCountryUpdate.TabIndex = 1;
@@ -79,7 +79,7 @@ namespace CRUDApp
             // 
             // textBoxCapitalUpdate
             // 
-            this.textBoxCapitalUpdate.Location = new System.Drawing.Point(154, 68);
+            this.textBoxCapitalUpdate.Location = new System.Drawing.Point(140, 60);
             this.textBoxCapitalUpdate.Name = "textBoxCapitalUpdate";
             this.textBoxCapitalUpdate.Size = new System.Drawing.Size(100, 20);
             this.textBoxCapitalUpdate.TabIndex = 2;
@@ -87,7 +87,7 @@ namespace CRUDApp
             // 
             // textBoxCountPeopleUpdate
             // 
-            this.textBoxCountPeopleUpdate.Location = new System.Drawing.Point(400, 68);
+            this.textBoxCountPeopleUpdate.Location = new System.Drawing.Point(380, 60);
             this.textBoxCountPeopleUpdate.Name = "textBoxCountPeopleUpdate";
             this.textBoxCountPeopleUpdate.Size = new System.Drawing.Size(100, 20);
             this.textBoxCountPeopleUpdate.TabIndex = 4;
@@ -95,25 +95,25 @@ namespace CRUDApp
             // 
             // labelNameCountry
             // 
-            this.labelNameCountry.Location = new System.Drawing.Point(44, 48);
+            this.labelNameCountry.Location = new System.Drawing.Point(20, 40);
             this.labelNameCountry.Name = "labelNameCountry";
-            this.labelNameCountry.Size = new System.Drawing.Size(87, 17);
+            this.labelNameCountry.Size = new System.Drawing.Size(100, 17);
             this.labelNameCountry.TabIndex = 5;
             this.labelNameCountry.Text = "Название";
             this.labelNameCountry.Visible = false;
             // 
             // labelCapital
             // 
-            this.labelCapital.Location = new System.Drawing.Point(168, 46);
+            this.labelCapital.Location = new System.Drawing.Point(140, 40);
             this.labelCapital.Name = "labelCapital";
-            this.labelCapital.Size = new System.Drawing.Size(86, 19);
+            this.labelCapital.Size = new System.Drawing.Size(100, 19);
             this.labelCapital.TabIndex = 6;
             this.labelCapital.Text = "Столица";
             this.labelCapital.Visible = false;
             // 
             // labelContitnent
             // 
-            this.labelContitnent.Location = new System.Drawing.Point(293, 49);
+            this.labelContitnent.Location = new System.Drawing.Point(260, 40);
             this.labelContitnent.Name = "labelContitnent";
             this.labelContitnent.Size = new System.Drawing.Size(100, 23);
             this.labelContitnent.TabIndex = 7;
@@ -123,15 +123,15 @@ namespace CRUDApp
             // comboBoxContinentUpdate
             // 
             this.comboBoxContinentUpdate.FormattingEnabled = true;
-            this.comboBoxContinentUpdate.Location = new System.Drawing.Point(280, 68);
+            this.comboBoxContinentUpdate.Location = new System.Drawing.Point(260, 60);
             this.comboBoxContinentUpdate.Name = "comboBoxContinentUpdate";
-            this.comboBoxContinentUpdate.Size = new System.Drawing.Size(102, 21);
+            this.comboBoxContinentUpdate.Size = new System.Drawing.Size(100, 21);
             this.comboBoxContinentUpdate.TabIndex = 8;
             this.comboBoxContinentUpdate.Visible = false;
             // 
             // labelCountPeople
             // 
-            this.labelCountPeople.Location = new System.Drawing.Point(399, 46);
+            this.labelCountPeople.Location = new System.Drawing.Point(380, 40);
             this.labelCountPeople.Name = "labelCountPeople";
             this.labelCountPeople.Size = new System.Drawing.Size(101, 19);
             this.labelCountPeople.TabIndex = 9;
@@ -140,7 +140,7 @@ namespace CRUDApp
             // 
             // labelLanguage
             // 
-            this.labelLanguage.Location = new System.Drawing.Point(43, 125);
+            this.labelLanguage.Location = new System.Drawing.Point(20, 10);
             this.labelLanguage.Name = "labelLanguage";
             this.labelLanguage.Size = new System.Drawing.Size(211, 19);
             this.labelLanguage.TabIndex = 10;
@@ -149,7 +149,7 @@ namespace CRUDApp
             // 
             // textBoxNameLanguageUpdate
             // 
-            this.textBoxNameLanguageUpdate.Location = new System.Drawing.Point(33, 176);
+            this.textBoxNameLanguageUpdate.Location = new System.Drawing.Point(20, 60);
             this.textBoxNameLanguageUpdate.Name = "textBoxNameLanguageUpdate";
             this.textBoxNameLanguageUpdate.Size = new System.Drawing.Size(100, 20);
             this.textBoxNameLanguageUpdate.TabIndex = 11;
@@ -157,7 +157,7 @@ namespace CRUDApp
             // 
             // textBoxLanguageGroupUpdate
             // 
-            this.textBoxLanguageGroupUpdate.Location = new System.Drawing.Point(154, 176);
+            this.textBoxLanguageGroupUpdate.Location = new System.Drawing.Point(140, 60);
             this.textBoxLanguageGroupUpdate.Name = "textBoxLanguageGroupUpdate";
             this.textBoxLanguageGroupUpdate.Size = new System.Drawing.Size(100, 20);
             this.textBoxLanguageGroupUpdate.TabIndex = 12;
@@ -165,7 +165,7 @@ namespace CRUDApp
             // 
             // textBoxSignSystemTypeUpdate
             // 
-            this.textBoxSignSystemTypeUpdate.Location = new System.Drawing.Point(280, 176);
+            this.textBoxSignSystemTypeUpdate.Location = new System.Drawing.Point(260, 60);
             this.textBoxSignSystemTypeUpdate.Name = "textBoxSignSystemTypeUpdate";
             this.textBoxSignSystemTypeUpdate.Size = new System.Drawing.Size(107, 20);
             this.textBoxSignSystemTypeUpdate.TabIndex = 13;
@@ -173,34 +173,34 @@ namespace CRUDApp
             // 
             // labelNameLanguage
             // 
-            this.labelNameLanguage.Location = new System.Drawing.Point(33, 154);
+            this.labelNameLanguage.Location = new System.Drawing.Point(20, 40);
             this.labelNameLanguage.Name = "labelNameLanguage";
-            this.labelNameLanguage.Size = new System.Drawing.Size(88, 19);
+            this.labelNameLanguage.Size = new System.Drawing.Size(88, 17);
             this.labelNameLanguage.TabIndex = 14;
             this.labelNameLanguage.Text = "Название";
             this.labelNameLanguage.Visible = false;
             // 
             // labelLanguageGroup
             // 
-            this.labelLanguageGroup.Location = new System.Drawing.Point(154, 150);
+            this.labelLanguageGroup.Location = new System.Drawing.Point(140, 40);
             this.labelLanguageGroup.Name = "labelLanguageGroup";
-            this.labelLanguageGroup.Size = new System.Drawing.Size(100, 23);
+            this.labelLanguageGroup.Size = new System.Drawing.Size(100, 17);
             this.labelLanguageGroup.TabIndex = 15;
             this.labelLanguageGroup.Text = "Языковая группа";
             this.labelLanguageGroup.Visible = false;
             // 
             // labelSignSystemType
             // 
-            this.labelSignSystemType.Location = new System.Drawing.Point(280, 150);
+            this.labelSignSystemType.Location = new System.Drawing.Point(260, 40);
             this.labelSignSystemType.Name = "labelSignSystemType";
-            this.labelSignSystemType.Size = new System.Drawing.Size(137, 23);
+            this.labelSignSystemType.Size = new System.Drawing.Size(137, 17);
             this.labelSignSystemType.TabIndex = 16;
             this.labelSignSystemType.Text = "Вид знаковой системы";
             this.labelSignSystemType.Visible = false;
             // 
             // labelEtnosCountry
             // 
-            this.labelEtnosCountry.Location = new System.Drawing.Point(42, 237);
+            this.labelEtnosCountry.Location = new System.Drawing.Point(20, 10);
             this.labelEtnosCountry.Name = "labelEtnosCountry";
             this.labelEtnosCountry.Size = new System.Drawing.Size(79, 16);
             this.labelEtnosCountry.TabIndex = 17;
@@ -209,7 +209,7 @@ namespace CRUDApp
             // 
             // labelEtnosLanguage
             // 
-            this.labelEtnosLanguage.Location = new System.Drawing.Point(154, 237);
+            this.labelEtnosLanguage.Location = new System.Drawing.Point(140, 10);
             this.labelEtnosLanguage.Name = "labelEtnosLanguage";
             this.labelEtnosLanguage.Size = new System.Drawing.Size(100, 16);
             this.labelEtnosLanguage.TabIndex = 18;
@@ -219,7 +219,7 @@ namespace CRUDApp
             // comboBoxEtnosCountryUpdate
             // 
             this.comboBoxEtnosCountryUpdate.FormattingEnabled = true;
-            this.comboBoxEtnosCountryUpdate.Location = new System.Drawing.Point(33, 273);
+            this.comboBoxEtnosCountryUpdate.Location = new System.Drawing.Point(20, 40);
             this.comboBoxEtnosCountryUpdate.Name = "comboBoxEtnosCountryUpdate";
             this.comboBoxEtnosCountryUpdate.Size = new System.Drawing.Size(102, 21);
             this.comboBoxEtnosCountryUpdate.TabIndex = 19;
@@ -228,24 +228,24 @@ namespace CRUDApp
             // comboBoxEtnosLanguageUpdate
             // 
             this.comboBoxEtnosLanguageUpdate.FormattingEnabled = true;
-            this.comboBoxEtnosLanguageUpdate.Location = new System.Drawing.Point(154, 273);
+            this.comboBoxEtnosLanguageUpdate.Location = new System.Drawing.Point(140, 40);
             this.comboBoxEtnosLanguageUpdate.Name = "comboBoxEtnosLanguageUpdate";
-            this.comboBoxEtnosLanguageUpdate.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEtnosLanguageUpdate.Size = new System.Drawing.Size(100, 21);
             this.comboBoxEtnosLanguageUpdate.TabIndex = 20;
             this.comboBoxEtnosLanguageUpdate.Visible = false;
             // 
             // comboBoxYearUpdate
             // 
             this.comboBoxYearUpdate.FormattingEnabled = true;
-            this.comboBoxYearUpdate.Location = new System.Drawing.Point(296, 273);
+            this.comboBoxYearUpdate.Location = new System.Drawing.Point(260, 40);
             this.comboBoxYearUpdate.Name = "comboBoxYearUpdate";
-            this.comboBoxYearUpdate.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxYearUpdate.Size = new System.Drawing.Size(50, 21);
             this.comboBoxYearUpdate.TabIndex = 21;
             this.comboBoxYearUpdate.Visible = false;
             // 
             // textBoxStrenghtUpdate
             // 
-            this.textBoxStrenghtUpdate.Location = new System.Drawing.Point(441, 273);
+            this.textBoxStrenghtUpdate.Location = new System.Drawing.Point(330, 40);
             this.textBoxStrenghtUpdate.Name = "textBoxStrenghtUpdate";
             this.textBoxStrenghtUpdate.Size = new System.Drawing.Size(100, 20);
             this.textBoxStrenghtUpdate.TabIndex = 22;
@@ -253,7 +253,7 @@ namespace CRUDApp
             // 
             // labelYear
             // 
-            this.labelYear.Location = new System.Drawing.Point(296, 237);
+            this.labelYear.Location = new System.Drawing.Point(260, 10);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(100, 23);
             this.labelYear.TabIndex = 23;
@@ -262,7 +262,7 @@ namespace CRUDApp
             // 
             // labelStrenght
             // 
-            this.labelStrenght.Location = new System.Drawing.Point(441, 237);
+            this.labelStrenght.Location = new System.Drawing.Point(330, 10);
             this.labelStrenght.Name = "labelStrenght";
             this.labelStrenght.Size = new System.Drawing.Size(100, 23);
             this.labelStrenght.TabIndex = 24;
@@ -271,7 +271,7 @@ namespace CRUDApp
             // 
             // buttonUpdateCountry
             // 
-            this.buttonUpdateCountry.Location = new System.Drawing.Point(608, 50);
+            this.buttonUpdateCountry.Location = new System.Drawing.Point(500, 40);
             this.buttonUpdateCountry.Name = "buttonUpdateCountry";
             this.buttonUpdateCountry.Size = new System.Drawing.Size(83, 38);
             this.buttonUpdateCountry.TabIndex = 25;
@@ -282,9 +282,9 @@ namespace CRUDApp
             // 
             // buttonUpdateLanguage
             // 
-            this.buttonUpdateLanguage.Location = new System.Drawing.Point(608, 173);
+            this.buttonUpdateLanguage.Location = new System.Drawing.Point(380, 57);
             this.buttonUpdateLanguage.Name = "buttonUpdateLanguage";
-            this.buttonUpdateLanguage.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdateLanguage.Size = new System.Drawing.Size(100, 25);
             this.buttonUpdateLanguage.TabIndex = 26;
             this.buttonUpdateLanguage.Text = "Обновить";
             this.buttonUpdateLanguage.UseVisualStyleBackColor = true;
@@ -293,7 +293,7 @@ namespace CRUDApp
             // 
             // buttonUpdateEtnos
             // 
-            this.buttonUpdateEtnos.Location = new System.Drawing.Point(608, 270);
+            this.buttonUpdateEtnos.Location = new System.Drawing.Point(450, 40);
             this.buttonUpdateEtnos.Name = "buttonUpdateEtnos";
             this.buttonUpdateEtnos.Size = new System.Drawing.Size(75, 23);
             this.buttonUpdateEtnos.TabIndex = 27;
@@ -306,7 +306,8 @@ namespace CRUDApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 326);
+            this.ClientSize = new System.Drawing.Size(598, 97);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Controls.Add(this.buttonUpdateEtnos);
             this.Controls.Add(this.buttonUpdateLanguage);
             this.Controls.Add(this.buttonUpdateCountry);

@@ -40,6 +40,7 @@ namespace CRUDApp
 
         public void SelectAll()
         {
+            
             cb.GetColumnInComboBox("Страны","Название", comboBoxCountryDelete);
             cb.GetColumnInComboBox("Страны", "Название", comboBoxCountryUpdate);
             cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryDelete);
@@ -75,12 +76,6 @@ namespace CRUDApp
                 listItem.SubItems.Add(item.Количество_жителей.ToString());
                 listViewCountry.Items.Add(listItem);
             }
-        }
-
-        public void RefreshData()
-        {
-            listViewCountry.Items.Clear();
-            SelectCountry(); 
         }
         
         private void listViewCountry_SelectedIndexChanged(object sender, EventArgs e)
@@ -408,32 +403,6 @@ namespace CRUDApp
         }
         
         #endregion
-
-        private void buttonRefreshDataCountry_Click(object sender, EventArgs e)
-        {
-            cb.GetColumnInComboBox("Страны","Название", comboBoxCountryDelete);
-            cb.GetColumnInComboBox("Страны", "Название", comboBoxCountryUpdate);
-            cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryDelete);
-            cb.GetColumnInComboBox("Страны", "Название", comboBoxEtnosCountryUpdate);
-            SelectCountry();
-            SelectEtnos();
-        }
-
-        private void buttonRefreshDataLanguage_Click(object sender, EventArgs e)
-        {
-            listViewLanguage.Items.Clear();
-            cb.GetColumnInComboBox("Языки", "Название", comboBoxLanguageDelete);
-            cb.GetColumnInComboBox("Языки", "Название", comboBoxLanguageUpdate);
-            cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageDelete);
-            cb.GetColumnInComboBox("Языки", "Название", comboBoxEtnosLanguageUpdate);
-            SelectLanguage();
-            SelectEtnos();
-        }
-
-        private void buttonRefreshDataEtnos_Click(object sender, EventArgs e)
-        {
-            SelectEtnos();
-            setYear();
-        }
+        
     }
 }

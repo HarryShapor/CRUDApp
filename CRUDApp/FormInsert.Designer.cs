@@ -322,6 +322,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(235, 418);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Controls.Add(this.btnLanguageInsert);
             this.Controls.Add(this.textBoxTypeSignSystem);
             this.Controls.Add(this.textBoxLanguageGroup);
