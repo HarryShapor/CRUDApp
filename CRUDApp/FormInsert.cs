@@ -27,7 +27,7 @@ namespace CRUDApp
             InitializeComponent();
             if (this.nameButton == "btnInsertCountry")
             {
-                this.ClientSize = new System.Drawing.Size(200, 400);
+                this.ClientSize = new System.Drawing.Size(200, 260);
                 labelNameCountry.Visible = true;
                 labelCapital.Visible = true;
                 labelContinent.Visible = true;
@@ -44,11 +44,11 @@ namespace CRUDApp
                 comboBoxContinent.Items.Add("Южная Америка");
                 comboBoxContinent.Items.Add("Антарктида");
                 comboBoxContinent.Items.Add("Австралия");
-                // comboBoxContinent.Items.Add("");
+                comboBoxContinent.Items.Add("");
             }
             else if (this.nameButton == "btnInsertLanguage")
             {
-                this.ClientSize = new System.Drawing.Size(200, 330);
+                this.ClientSize = new System.Drawing.Size(200, 260);
                 labelNameLanguage.Visible = true;
                 labelLanguageGroup.Visible = true;
                 labelTypeSignSystem.Visible = true;
@@ -59,7 +59,7 @@ namespace CRUDApp
             }
             else if (this.nameButton == "btnInsertEtnos")
             {
-                this.ClientSize = new System.Drawing.Size(200, 330);
+                this.ClientSize = new System.Drawing.Size(200, 280);
                 labelEtnosCountry.Visible = true;
                 labelEtnosLanguage.Visible = true;
                 labelYear.Visible = true;
@@ -95,7 +95,7 @@ namespace CRUDApp
                 {
                             Название = textBoxNameCountry.Text,
                             Столица = textBoxCapital.Text,
-                            Материк = comboBoxContinent.Text,
+                            Материк = continent,
                             Количество_жителей = Convert.ToInt32(textBoxCountPeople.Text)
                         };
                         if (contextLNW.Страны.Where(el => el.Название == country.Название).ToList().Count == 0)

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace CRUDApp
 {
@@ -128,6 +129,7 @@ namespace CRUDApp
             this.comboBoxContinentUpdate.Size = new System.Drawing.Size(100, 21);
             this.comboBoxContinentUpdate.TabIndex = 8;
             this.comboBoxContinentUpdate.Visible = false;
+            this.comboBoxContinentUpdate.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // labelCountPeople
             // 
@@ -224,6 +226,7 @@ namespace CRUDApp
             this.comboBoxEtnosCountryUpdate.Size = new System.Drawing.Size(102, 21);
             this.comboBoxEtnosCountryUpdate.TabIndex = 19;
             this.comboBoxEtnosCountryUpdate.Visible = false;
+            this.comboBoxEtnosCountryUpdate.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // comboBoxEtnosLanguageUpdate
             // 
@@ -233,6 +236,7 @@ namespace CRUDApp
             this.comboBoxEtnosLanguageUpdate.Size = new System.Drawing.Size(100, 21);
             this.comboBoxEtnosLanguageUpdate.TabIndex = 20;
             this.comboBoxEtnosLanguageUpdate.Visible = false;
+            this.comboBoxEtnosLanguageUpdate.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // comboBoxYearUpdate
             // 
@@ -242,6 +246,7 @@ namespace CRUDApp
             this.comboBoxYearUpdate.Size = new System.Drawing.Size(50, 21);
             this.comboBoxYearUpdate.TabIndex = 21;
             this.comboBoxYearUpdate.Visible = false;
+            this.comboBoxYearUpdate.DropDownStyle = ComboBoxStyle.DropDownList;
             // 
             // textBoxStrenghtUpdate
             // 

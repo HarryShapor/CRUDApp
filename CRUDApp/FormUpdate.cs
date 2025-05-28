@@ -56,7 +56,7 @@ namespace CRUDApp
                 comboBoxContinentUpdate.Items.Add("Южная Америка");
                 comboBoxContinentUpdate.Items.Add("Антарктида");
                 comboBoxContinentUpdate.Items.Add("Австралия");
-                // comboBoxContinent.Items.Add("");
+                comboBoxContinentUpdate.Items.Add("");
             }
             else if (this.nameButton == "buttonLanguageUpdate")
             {
@@ -89,7 +89,7 @@ namespace CRUDApp
             this.nameButton = nameBtn;
             this.form = form;
             InitializeComponent();
-            this.ClientSize = new System.Drawing.Size(500, 80);
+            this.ClientSize = new System.Drawing.Size(550, 80);
             labelEtnosCountry.Visible = true;
             labelEtnosLanguage.Visible = true;
             labelYear.Visible = true;
@@ -141,7 +141,8 @@ namespace CRUDApp
                 }
                 if (comboBoxContinentUpdate.SelectedIndex != -1)
                 {
-                    countryUpdate.Материк = comboBoxContinentUpdate.Text;
+                    string continent = comboBoxContinentUpdate.Text == "" ? null : comboBoxContinentUpdate.Text;
+                    countryUpdate.Материк = continent;
                 }
                 if ((int.Parse(textBoxCountPeopleUpdate.Text) > 0))
                 {

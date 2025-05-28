@@ -14,6 +14,7 @@ namespace CRUDApp
 {
     public partial class MainForm : Form
     {
+        private Form _form;
         private ColumnComboBox cb = new ColumnComboBox();
         private LanguageNationWorld contextLNW = new LanguageNationWorld(
             "Data Source = DESKTOP-OT35EF4\\SQLEXPRESS;"
@@ -86,9 +87,12 @@ namespace CRUDApp
 
         private void btnInsertCountry_Click(object sender, EventArgs e)
         {
-
-            Form form = new FormInsert(btnInsertCountry.Name, this);
-            form.Show(); 
+            if (_form != null)
+            {
+                _form.Dispose();
+            }
+            _form = new FormInsert(btnInsertCountry.Name, this);
+            _form.Show(); 
         }
         
         private void btnUpdateCountry_Click(object sender, EventArgs e)
@@ -103,8 +107,12 @@ namespace CRUDApp
 
             if (contextLNW.Страны.Where(el => el.Код == country).Count() != 0)
             {
-                Form form = new FormUpdate(btnUpdateCountry.Name, country, this);
-                form.Show();
+                if (_form != null)
+                {
+                    _form.Dispose();
+                }
+                _form = new FormUpdate(btnUpdateCountry.Name, country, this);
+                _form.Show();
             }
             else
             {
@@ -186,8 +194,12 @@ namespace CRUDApp
 
         private void btnInsertLanguage_Click(object sender, EventArgs e)
         {
-            Form form = new FormInsert(btnInsertLanguage.Name, this);
-            form.Show();
+            if (_form != null)
+            {
+                _form.Dispose();
+            }
+            _form = new FormInsert(btnInsertLanguage.Name, this);
+            _form.Show();
         }
 
         private void buttonLanguageUpdate_Click(object sender, EventArgs e)
@@ -202,8 +214,12 @@ namespace CRUDApp
 
             if (contextLNW.Языки.Where(el => el.Код == language).Count() != 0)
             {
-                Form form = new FormUpdate(buttonLanguageUpdate.Name, language, this);
-                form.Show();
+                if (_form != null)
+                {
+                    _form.Dispose();
+                }
+                _form = new FormUpdate(buttonLanguageUpdate.Name, language, this);
+                _form.Show();
             }
             else
             {
@@ -308,8 +324,12 @@ namespace CRUDApp
         
         private void btnInsertEtnos_Click(object sender, EventArgs e)
         {
-            Form form = new FormInsert(btnInsertEtnos.Name, this);
-            form.Show();
+            if (_form != null)
+            {
+                _form.Dispose();
+            }
+            _form = new FormInsert(btnInsertEtnos.Name, this);
+            _form.Show();
         }
 
         private void buttonEtnosUpdate_Click(object sender, EventArgs e)
@@ -338,9 +358,13 @@ namespace CRUDApp
                         .Select(c => c.Код).FirstOrDefault()
                     && el.Год == year).Count() != 0)
             {
-                Form form = new FormUpdate(buttonEtnosUpdate.Name, comboBoxEtnosCountryUpdate.Text,
+                if (_form != null)
+                {
+                    _form.Dispose();
+                }
+                _form = new FormUpdate(buttonEtnosUpdate.Name, comboBoxEtnosCountryUpdate.Text,
                     comboBoxEtnosLanguageUpdate.Text, comboBoxEtnosYearUpdate.Text, this);
-                form.Show();
+                _form.Show();
             }
             else
             {

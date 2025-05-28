@@ -65,10 +65,10 @@
             // 
             // btnEtnosInsert
             // 
-            this.btnEtnosInsert.Location = new System.Drawing.Point(31, 228);
+            this.btnEtnosInsert.Location = new System.Drawing.Point(30, 230);
             this.btnEtnosInsert.Margin = new System.Windows.Forms.Padding(2);
             this.btnEtnosInsert.Name = "btnEtnosInsert";
-            this.btnEtnosInsert.Size = new System.Drawing.Size(72, 19);
+            this.btnEtnosInsert.Size = new System.Drawing.Size(90, 25);
             this.btnEtnosInsert.TabIndex = 16;
             this.btnEtnosInsert.Text = "Добавить";
             this.btnEtnosInsert.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // 
             // textBoxStrenght
             // 
-            this.textBoxStrenght.Location = new System.Drawing.Point(28, 203);
+            this.textBoxStrenght.Location = new System.Drawing.Point(28, 200);
             this.textBoxStrenght.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxStrenght.Name = "textBoxStrenght";
             this.textBoxStrenght.Size = new System.Drawing.Size(91, 20);
@@ -86,7 +86,7 @@
             // 
             // comboBoxYear
             // 
-            this.comboBoxYear.Location = new System.Drawing.Point(28, 154);
+            this.comboBoxYear.Location = new System.Drawing.Point(30, 150);
             this.comboBoxYear.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(91, 21);
@@ -95,7 +95,7 @@
             // 
             // comboBoxEtnosLanguage
             // 
-            this.comboBoxEtnosLanguage.Location = new System.Drawing.Point(28, 106);
+            this.comboBoxEtnosLanguage.Location = new System.Drawing.Point(30, 100);
             this.comboBoxEtnosLanguage.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEtnosLanguage.Name = "comboBoxEtnosLanguage";
             this.comboBoxEtnosLanguage.Size = new System.Drawing.Size(91, 21);
@@ -104,7 +104,7 @@
             // 
             // comboBoxEtnosCountry
             // 
-            this.comboBoxEtnosCountry.Location = new System.Drawing.Point(28, 57);
+            this.comboBoxEtnosCountry.Location = new System.Drawing.Point(30, 50);
             this.comboBoxEtnosCountry.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxEtnosCountry.Name = "comboBoxEtnosCountry";
             this.comboBoxEtnosCountry.Size = new System.Drawing.Size(91, 21);
@@ -113,17 +113,17 @@
             // 
             // labelEtnosCountry
             // 
-            this.labelEtnosCountry.Location = new System.Drawing.Point(28, 32);
+            this.labelEtnosCountry.Location = new System.Drawing.Point(30, 20);
             this.labelEtnosCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEtnosCountry.Name = "labelEtnosCountry";
-            this.labelEtnosCountry.Size = new System.Drawing.Size(90, 18);
+            this.labelEtnosCountry.Size = new System.Drawing.Size(150, 18);
             this.labelEtnosCountry.TabIndex = 17;
             this.labelEtnosCountry.Text = "Выберите страну";
             this.labelEtnosCountry.Visible = false;
             // 
             // labelEtnosLanguage
             // 
-            this.labelEtnosLanguage.Location = new System.Drawing.Point(28, 81);
+            this.labelEtnosLanguage.Location = new System.Drawing.Point(30, 80);
             this.labelEtnosLanguage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEtnosLanguage.Name = "labelEtnosLanguage";
             this.labelEtnosLanguage.Size = new System.Drawing.Size(90, 18);
@@ -133,17 +133,17 @@
             // 
             // labelStrenght
             // 
-            this.labelStrenght.Location = new System.Drawing.Point(28, 179);
+            this.labelStrenght.Location = new System.Drawing.Point(25, 180);
             this.labelStrenght.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStrenght.Name = "labelStrenght";
-            this.labelStrenght.Size = new System.Drawing.Size(90, 18);
+            this.labelStrenght.Size = new System.Drawing.Size(200, 18);
             this.labelStrenght.TabIndex = 23;
             this.labelStrenght.Text = "Введите численность населения";
             this.labelStrenght.Visible = false;
             // 
             // labelYear
             // 
-            this.labelYear.Location = new System.Drawing.Point(28, 130);
+            this.labelYear.Location = new System.Drawing.Point(30, 130);
             this.labelYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(90, 18);
@@ -153,7 +153,7 @@
             // 
             // textBoxNameCountry
             // 
-            this.textBoxNameCountry.Location = new System.Drawing.Point(28, 60);
+            this.textBoxNameCountry.Location = new System.Drawing.Point(30, 50);
             this.textBoxNameCountry.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNameCountry.Name = "textBoxNameCountry";
             this.textBoxNameCountry.Size = new System.Drawing.Size(76, 20);
@@ -163,7 +163,7 @@
             // labelNameCountry
             // 
             this.labelNameCountry.AutoSize = true;
-            this.labelNameCountry.Location = new System.Drawing.Point(28, 27);
+            this.labelNameCountry.Location = new System.Drawing.Point(30, 20);
             this.labelNameCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNameCountry.Name = "labelNameCountry";
             this.labelNameCountry.Size = new System.Drawing.Size(97, 13);
@@ -174,7 +174,7 @@
             // labelCapital
             // 
             this.labelCapital.AutoSize = true;
-            this.labelCapital.Location = new System.Drawing.Point(26, 106);
+            this.labelCapital.Location = new System.Drawing.Point(30, 80);
             this.labelCapital.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCapital.Name = "labelCapital";
             this.labelCapital.Size = new System.Drawing.Size(49, 13);
@@ -185,7 +185,7 @@
             // labelContinent
             // 
             this.labelContinent.AutoSize = true;
-            this.labelContinent.Location = new System.Drawing.Point(26, 176);
+            this.labelContinent.Location = new System.Drawing.Point(30, 130);
             this.labelContinent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelContinent.Name = "labelContinent";
             this.labelContinent.Size = new System.Drawing.Size(51, 13);
@@ -196,7 +196,7 @@
             // labelCountPeople
             // 
             this.labelCountPeople.AutoSize = true;
-            this.labelCountPeople.Location = new System.Drawing.Point(28, 251);
+            this.labelCountPeople.Location = new System.Drawing.Point(30, 180);
             this.labelCountPeople.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCountPeople.Name = "labelCountPeople";
             this.labelCountPeople.Size = new System.Drawing.Size(138, 13);
@@ -206,8 +206,9 @@
             // 
             // comboBoxContinent
             // 
+            this.comboBoxContinent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxContinent.FormattingEnabled = true;
-            this.comboBoxContinent.Location = new System.Drawing.Point(28, 209);
+            this.comboBoxContinent.Location = new System.Drawing.Point(30, 150);
             this.comboBoxContinent.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxContinent.Name = "comboBoxContinent";
             this.comboBoxContinent.Size = new System.Drawing.Size(92, 21);
@@ -216,7 +217,7 @@
             // 
             // textBoxCapital
             // 
-            this.textBoxCapital.Location = new System.Drawing.Point(28, 136);
+            this.textBoxCapital.Location = new System.Drawing.Point(30, 100);
             this.textBoxCapital.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCapital.Name = "textBoxCapital";
             this.textBoxCapital.Size = new System.Drawing.Size(76, 20);
@@ -225,7 +226,7 @@
             // 
             // textBoxCountPeople
             // 
-            this.textBoxCountPeople.Location = new System.Drawing.Point(28, 287);
+            this.textBoxCountPeople.Location = new System.Drawing.Point(30, 200);
             this.textBoxCountPeople.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCountPeople.Name = "textBoxCountPeople";
             this.textBoxCountPeople.Size = new System.Drawing.Size(76, 20);
@@ -234,10 +235,10 @@
             // 
             // btnCountryInsert
             // 
-            this.btnCountryInsert.Location = new System.Drawing.Point(30, 332);
+            this.btnCountryInsert.Location = new System.Drawing.Point(30, 230);
             this.btnCountryInsert.Margin = new System.Windows.Forms.Padding(2);
             this.btnCountryInsert.Name = "btnCountryInsert";
-            this.btnCountryInsert.Size = new System.Drawing.Size(74, 19);
+            this.btnCountryInsert.Size = new System.Drawing.Size(90, 25);
             this.btnCountryInsert.TabIndex = 8;
             this.btnCountryInsert.Text = "Добавить";
             this.btnCountryInsert.UseVisualStyleBackColor = true;
@@ -247,7 +248,7 @@
             // labelNameLanguage
             // 
             this.labelNameLanguage.AutoSize = true;
-            this.labelNameLanguage.Location = new System.Drawing.Point(28, 26);
+            this.labelNameLanguage.Location = new System.Drawing.Point(30, 20);
             this.labelNameLanguage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNameLanguage.Name = "labelNameLanguage";
             this.labelNameLanguage.Size = new System.Drawing.Size(92, 13);
@@ -257,7 +258,7 @@
             // 
             // textBoxNameLanguage
             // 
-            this.textBoxNameLanguage.Location = new System.Drawing.Point(31, 60);
+            this.textBoxNameLanguage.Location = new System.Drawing.Point(30, 50);
             this.textBoxNameLanguage.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNameLanguage.Name = "textBoxNameLanguage";
             this.textBoxNameLanguage.Size = new System.Drawing.Size(76, 20);
@@ -267,7 +268,7 @@
             // labelLanguageGroup
             // 
             this.labelLanguageGroup.AutoSize = true;
-            this.labelLanguageGroup.Location = new System.Drawing.Point(28, 106);
+            this.labelLanguageGroup.Location = new System.Drawing.Point(30, 80);
             this.labelLanguageGroup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLanguageGroup.Name = "labelLanguageGroup";
             this.labelLanguageGroup.Size = new System.Drawing.Size(96, 13);
@@ -278,7 +279,7 @@
             // labelTypeSignSystem
             // 
             this.labelTypeSignSystem.AutoSize = true;
-            this.labelTypeSignSystem.Location = new System.Drawing.Point(28, 175);
+            this.labelTypeSignSystem.Location = new System.Drawing.Point(30, 130);
             this.labelTypeSignSystem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTypeSignSystem.Name = "labelTypeSignSystem";
             this.labelTypeSignSystem.Size = new System.Drawing.Size(125, 13);
@@ -288,7 +289,7 @@
             // 
             // textBoxLanguageGroup
             // 
-            this.textBoxLanguageGroup.Location = new System.Drawing.Point(31, 136);
+            this.textBoxLanguageGroup.Location = new System.Drawing.Point(30, 100);
             this.textBoxLanguageGroup.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLanguageGroup.Name = "textBoxLanguageGroup";
             this.textBoxLanguageGroup.Size = new System.Drawing.Size(76, 20);
@@ -297,7 +298,7 @@
             // 
             // textBoxTypeSignSystem
             // 
-            this.textBoxTypeSignSystem.Location = new System.Drawing.Point(28, 209);
+            this.textBoxTypeSignSystem.Location = new System.Drawing.Point(30, 150);
             this.textBoxTypeSignSystem.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTypeSignSystem.Name = "textBoxTypeSignSystem";
             this.textBoxTypeSignSystem.Size = new System.Drawing.Size(91, 20);
@@ -306,10 +307,10 @@
             // 
             // btnLanguageInsert
             // 
-            this.btnLanguageInsert.Location = new System.Drawing.Point(31, 251);
+            this.btnLanguageInsert.Location = new System.Drawing.Point(30, 180);
             this.btnLanguageInsert.Margin = new System.Windows.Forms.Padding(2);
             this.btnLanguageInsert.Name = "btnLanguageInsert";
-            this.btnLanguageInsert.Size = new System.Drawing.Size(72, 19);
+            this.btnLanguageInsert.Size = new System.Drawing.Size(90, 25);
             this.btnLanguageInsert.TabIndex = 15;
             this.btnLanguageInsert.Text = "Добавить";
             this.btnLanguageInsert.UseVisualStyleBackColor = true;
@@ -321,8 +322,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(235, 418);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(191, 364);
             this.Controls.Add(this.btnLanguageInsert);
             this.Controls.Add(this.textBoxTypeSignSystem);
             this.Controls.Add(this.textBoxLanguageGroup);
@@ -348,6 +348,7 @@
             this.Controls.Add(this.comboBoxYear);
             this.Controls.Add(this.textBoxStrenght);
             this.Controls.Add(this.btnEtnosInsert);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(15, 15);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormInsert";
