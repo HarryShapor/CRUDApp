@@ -128,12 +128,23 @@ namespace CRUDApp
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
                 var countryUpdate = contextLNW.Страны.Where(el => el.Код == this.country).FirstOrDefault();
-                if (textBoxNameCountryUpdate.Text != "")
+                if (IsOnlyLetters(textBoxNameCountryUpdate.Text))
                 {
                     countryUpdate.Название = textBoxNameCountryUpdate.Text;
                 }
+                else
+                {
+                    MessageBox.Show("Поле \"Название\" пустое или содержит запрещенные символы!");
+                }
                 if (textBoxCapitalUpdate.Text != ""){
-                    countryUpdate.Столица = textBoxCapitalUpdate.Text;
+                    if (IsOnlyLetters(textBoxCapitalUpdate.Text))
+                    {
+                        countryUpdate.Столица = textBoxCapitalUpdate.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Поле \"Столица\" содержит запрещенные символы!");
+                    }
                 }
                 else
                 {
@@ -144,11 +155,21 @@ namespace CRUDApp
                     string continent = comboBoxContinentUpdate.Text == "" ? null : comboBoxContinentUpdate.Text;
                     countryUpdate.Материк = continent;
                 }
-                if ((int.Parse(textBoxCountPeopleUpdate.Text) > 0))
+                if (IsOnlyDigit(textBoxCountPeopleUpdate.Text))
                 {
-                    countryUpdate.Количество_жителей = int.Parse(textBoxCountPeopleUpdate.Text);
+                    if ((int.Parse(textBoxCountPeopleUpdate.Text) > 0))
+                    {
+                        countryUpdate.Количество_жителей = int.Parse(textBoxCountPeopleUpdate.Text);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Значение поля \"Количество жителей\" меньше нуля!");
+                    }
                 }
-                // contextLNW.Страны.Where()
+                else
+                {
+                    MessageBox.Show("Поле \"Количество жителей\" пустое или имеет запрещенные символы!");
+                }
                 contextLNW.SaveChanges();
                 MessageBox.Show("Данные успешно обновлены!");
                 return;
@@ -158,22 +179,38 @@ namespace CRUDApp
         private void buttonUpdateLanguage_Click(object sender, EventArgs e)
         {
             var languageUpdate = contextLNW.Языки.Where(el => el.Код == this.language).FirstOrDefault();
-            if (textBoxNameLanguageUpdate.Text != "")
+            if (IsOnlyLetters(textBoxNameLanguageUpdate.Text))
             {
                 languageUpdate.Название = textBoxNameLanguageUpdate.Text;
             }
+            else
+            {
+                MessageBox.Show("Поле \"Название\" пустое или содержит запрещенные символы!");
+            }
             if (textBoxSignSystemTypeUpdate.Text != ""){
-                languageUpdate.Вид_знаковой_системы = textBoxSignSystemTypeUpdate.Text;
+                if (IsOnlyLetters(textBoxSignSystemTypeUpdate.Text))
+                {
+                    languageUpdate.Вид_знаковой_системы = textBoxSignSystemTypeUpdate.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Поле \"Вид знаковой системы\" содержит запрещенные символы!");
+                }
             }
             else
             {
                 languageUpdate.Вид_знаковой_системы = null;
             }
-            if (textBoxLanguageGroupUpdate.Text != "")
+            if (IsOnlyLetters(textBoxLanguageGroupUpdate.Text))
             {
                 languageUpdate.Языковая_группа = textBoxLanguageGroupUpdate.Text;
             }
+            else
+            {
+                MessageBox.Show("Поле \"Языковая группа\" содержит запрещенные символы!");
+            }
             contextLNW.SaveChanges();
+            MessageBox.Show("Данные успешно обновлены!");
             return;
         }
 
@@ -201,12 +238,35 @@ namespace CRUDApp
             {
                 etnosUpdate.Год = int.Parse(comboBoxYearUpdate.Text);
             }
-            if (int.Parse(textBoxStrenghtUpdate.Text) > 0)
+            if (IsOnlyDigit(textBoxStrenghtUpdate.Text)){
+                if (int.Parse(textBoxStrenghtUpdate.Text) > 0)
+                {
+                    etnosUpdate.Численность = int.Parse(textBoxStrenghtUpdate.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Значение поля \"Численность\" меньше нуля!");
+                }
+            }
+            else
             {
-                etnosUpdate.Численность = int.Parse(textBoxStrenghtUpdate.Text);
+                MessageBox.Show("Поле \"Численность\" пустое или имеет запрещенные символы!");
             }
             contextLNW.SaveChanges();
+            MessageBox.Show("Данные успешно обновлены!");
             return;
+        }
+        
+        private static bool IsOnlyLetters(string input)
+        {
+            return !string.IsNullOrEmpty(input) && 
+                   input.All(char.IsLetter);
+        }
+        
+        private static bool IsOnlyDigit(string input)
+        {
+            return !string.IsNullOrEmpty(input) && 
+                   input.All(char.IsDigit);
         }
     }
 }

@@ -82,10 +82,22 @@ namespace CRUDApp
         
         private void btnCountryInsert_Click(object sender, EventArgs e)
         {
-            int countPeople = Convert.ToInt32(textBoxCountPeople.Text);
-            if (countPeople <= 0)
+            int countPeople;
+            if (IsOnlyDigit(textBoxCountPeople.Text))
             {
-                MessageBox.Show("Количество жителей должно быть положительным!");
+                if ((int.Parse(textBoxCountPeople.Text) > 0))
+                {
+                    countPeople = Convert.ToInt32(textBoxCountPeople.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Значение поля \"Количество жителей\" меньше нуля!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Поле \"Количество жителей\" пустое или имеет запрещенные символы!");
                 return;
             }
             if (IsOnlyLetters(textBoxNameCountry.Text) && IsOnlyLetters(textBoxCapital.Text))
@@ -96,7 +108,7 @@ namespace CRUDApp
                             Название = textBoxNameCountry.Text,
                             Столица = textBoxCapital.Text,
                             Материк = continent,
-                            Количество_жителей = Convert.ToInt32(textBoxCountPeople.Text)
+                            Количество_жителей = countPeople
                         };
                         if (contextLNW.Страны.Where(el => el.Название == country.Название).ToList().Count == 0)
                         {
@@ -152,10 +164,22 @@ namespace CRUDApp
 
         private void btnEtnosInsert_Click(object sender, EventArgs e)
         {
-            int strenght = Convert.ToInt32(textBoxStrenght.Text);
-            if (strenght <= 0)
+            int strenght;
+            if (IsOnlyDigit(textBoxStrenght.Text))
             {
-                MessageBox.Show("Количество жителей должно быть положительным!");
+                if ((int.Parse(textBoxStrenght.Text) > 0))
+                {
+                    strenght = Convert.ToInt32(textBoxStrenght.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Значение поля \"Численность\" меньше нуля!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Поле \"Численность\" пустое или имеет запрещенные символы!");
                 return;
             }
             var etnos = new ЭтническийСостав
@@ -165,7 +189,7 @@ namespace CRUDApp
                 Язык = Convert.ToInt32(contextLNW.Языки.Where(el => el.Название == comboBoxEtnosLanguage.Text)
                     .Select(el => el.Код).SingleOrDefault()),
                 Год = Convert.ToInt32(comboBoxYear.Text),
-                Численность = Convert.ToInt64(textBoxStrenght.Text)   
+                Численность = strenght
             };
             if (contextLNW.ЭтническийСостав.Where(el => el.Страна == etnos.Страна 
                     && el.Язык == etnos.Язык && el.Год == etnos.Год).ToList().Count == 0)
@@ -186,6 +210,11 @@ namespace CRUDApp
         {
             return !string.IsNullOrEmpty(input) && 
                    input.All(char.IsLetter);
+        }
+        private static bool IsOnlyDigit(string input)
+        {
+            return !string.IsNullOrEmpty(input) && 
+                   input.All(char.IsDigit);
         }
     }
 }

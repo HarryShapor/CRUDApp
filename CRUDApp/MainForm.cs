@@ -156,6 +156,7 @@ namespace CRUDApp
                     }
                         contextLNW.Страны.Remove(country);
                         contextLNW.SaveChanges();
+                        MessageBox.Show("Страна успешно удалена!");
                         comboBoxCountryDelete.SelectedIndex = -1;
                 }
                 else if (dialogCountry == DialogResult.No)
@@ -263,6 +264,7 @@ namespace CRUDApp
                     }
                     contextLNW.Языки.Remove(language);
                     contextLNW.SaveChanges();
+                    MessageBox.Show("Язык успешно удален!");
                     comboBoxLanguageDelete.SelectedIndex = -1;
                 }
                 else if (dialogLanguage == DialogResult.No)
@@ -410,6 +412,7 @@ namespace CRUDApp
                 {
                     contextLNW.ЭтническийСостав.Remove(etnos);
                     contextLNW.SaveChanges();
+                    MessageBox.Show("Запись успешно удалена!");
                     comboBoxEtnosCountryDelete.SelectedIndex = -1;
                     comboBoxEtnosLanguageDelete.SelectedIndex = -1;
                     comboBoxEtnosYearDelete.SelectedIndex = -1;
